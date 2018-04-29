@@ -2,65 +2,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SoDA Test 01</title>
-
-
-<!-- Latest compiled and minified Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- copied from demo -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-<script src="js/jQRangeSlider-5.7.2/jQDateRangeSlider-min.js"></script>
-<script src="js/jquery.dynatable.js"></script>
-
-
-<script>	
-	// SoQL Query Start
-	$.ajax({
-		url: "https://soda.demo.socrata.com/resource/6yvf-kk3n.json",
-		type: "GET",
-		data: {
-		  "$limit" : 5000,
-		  // This is our unique app token.
-		  "$$app_token" : "gNqVzSHJ7pWovzVu8pRHdiMHe"
-		}
-	}).done(function(data) {
-	  alert("Retrieved " + data.length + " records from the dataset!");
-	  console.log(data);
-	});
-	// SoQL Query End
+<title>Untitled Document</title>
+<!-- jQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
 </script>
 
+
+
+<script>
+// SoQL Query Start
+$.ajax({
+    url: "https://soda.demo.socrata.com/resource/6yvf-kk3n.json",
+    type: "GET",
+    data: {
+      "$limit" : 5000,
+      // This is our unique app token.
+      "$$app_token" : "gNqVzSHJ7pWovzVu8pRHdiMHe"
+    }
+}).done(function(data) {
+  alert("Retrieved " + data.length + " records from the dataset!");
+  console.log(data);
+});
+// SoQL Query End
+</script>
 
 </head>
 
 <body>
   <div id="slider"></div>
-  <button type="button" id="submitButton" class="btn btn-primary">Submit</button>	
- 
- 
- 
-<script>
-	// jQRangeSlider Start
-	// Today
-	var dateMax = new Date();
 
-	// Hard-coded min date. Could get this programmatically later
-	var dateMin = new Date(2000, 0, 1);
+  <script>
+  // jQRangeSlider Start
+  // Today
+  var dateMax = new Date();
 
-	$("#slider").dateRangeSlider({
-	  bounds: {
-		  min: dateMin,
-		  max: dateMax
-	  },
-	  defaultValues: {
-		  min: new Date(2014, 0, 1),
-		  max: dateMax
-	  }
-	});
-	// jQRangeSlider End
-</script>
+  // Hard-coded min date. Could get this programmatically later
+  var dateMin = new Date(2000, 0, 1);
+
+  $("#slider").dateRangeSlider({
+      bounds: {
+          min: dateMin,
+          max: dateMax
+      },
+      defaultValues: {
+          min: new Date(2014, 0, 1),
+          max: dateMax
+      }
+  });
+  // jQRangeSlider End
 </body>
 </html>
