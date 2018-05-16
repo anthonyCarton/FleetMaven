@@ -10,13 +10,14 @@ const escDie = 0.018;
 const escB20 = 0.018;
 const escB100 = 0.018;
 const escEle = -0.003; // electricty has negative escalation rate
-const reducer;
+
 
 // DECLARE GLOBAL VARIABLES (with let, not var)
 // Declare Depreciation Interval globally
 let depInt = 5; // will pull from dropdown / user entry
 let fuelHist;
 let fuelAve;
+let reducer;
 
 // FUEL PRICE AVERAGE OVER LAST YEAR IN CO
 // Last 52 allGradesGasPrice values in fuelHist[] and return average
