@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ------ FM-DRAFT-01 ------*/
+.fueltype {
+  border: solid thick black;
+  width:500px;
+  min-height:300px;
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fleet Maven</title>
+<!-- Prototype Page 5 Titled "MVP Gold" -->
+
+<!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
+<!--#include virtual="includes/head-include.html" -->
+
+</head>
+
+<body>
+</body>
+</html>
