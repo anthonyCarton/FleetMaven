@@ -11,5 +11,30 @@
 </head>
 
 <body>
+<div class="grid-container">
+	<!-- Start Header Include -->
+	<!--#include virtual="includes/fleet-maven-header.html"-->
+	<!-- End Header Incliude -->
+	<section class="grid-100 grid-parent black feature"></section>
+	<section class="grid-100 grid-parent">
+		<section class="grid-66 grid-parent">
+			<div class="grid-45 fm-card"></div>
+			<div class="push-5 grid-45 fm-card"></div>
+			<div class="clear"></div>
+			<div class="grid-45 fm-card"></div>
+			<div class="push-5 grid-45 fm-card"></div>
+			<div class="clear"></div>
+			<div class="grid-45 fm-card"></div>
+			<div class="push-5 grid-45 fm-card"></div>
+		</section>
+		<aside class="grid-33">
+			<section class="login black"></section>
+			<section class="member-options black"></section>
+		</aside>
+	</section>
+	<!-- Start Footer Include -->
+	<!--#include virtual="includes/fleet-maven-footer.html"-->
+	<!-- End Footer Include -->
+</div>
 </body>
 </html>

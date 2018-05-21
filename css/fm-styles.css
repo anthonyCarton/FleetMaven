@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Testing Styles */
+.black {
+	border:solid medium black;
+	min-height:100px;
+}
+.red {
+	background-color: red;
+}
+
+/* Structural Styles */
+.fm-header {
+	height:125px;
+}
+
+.feature {
+	min-height:500px;
+}
+
+.fm-card {
+	border: solid medium lightgray;
+	min-height: 485px;
+	margin-top:70px;
+}
+
+.login {
+	margin-top:70px;
+	min-height:315px;
+}
+
+.member-options {
+	margin-top:70px;
+	min-height:400px;
+}
+
+.fm-footer {
+	min-height:70px;
+	margin-top:155px;
+}
+

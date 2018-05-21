@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fleet Maven Interface Atoms</title>
+<link href="atoms-style.css" rel="stylesheet" type="text/css">
+
+<!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
+<!--#include virtual="../includes/head-include.html" -->
+
+</head>
+
+<body>
+	<!-- https://google.github.io/styleguide/htmlcssguide.html#HTML_Style_Rules-->
+	<!-- The most important rule of all is to be consistent. If something in the style rules isn't working, that's ok, as long as you always do it :) -->
+
+	<div id="container">
+		<h1>Fleet Maven Atoms for Design</h1>
+		<!--Buttons-->
+		<hr>
+		<h2>Fleet Maven Buttons</h2>
+		<!-- http://css3buttongenerator.com/ -->
+		
+		
+		<!--Orange Buttons-->
+		
+		<!--Orange Button | SUBMIT-->
+		<h3>Orange Feature Button</h3>
+		<p>A button used on the main page in feature images</p>
+		
+		<button class="orange-button medium-button">SUBMIT</button>
+		
+		<!-- use the <code> element as well as escape characters to show the html on the webpage so we can copy and paste it easilly -->
+		<!-- < is &lt; > is &gt; -->
+		<code>&lt;button class="orange-button medium-button"&gt;SUBMIT&lt;/button&gt;</code>
+
+		
+		<!--Orange Button | CALCULATE NOW-->
+		<h3>Orange Calculate Now Button</h3>
+		<p>A button used on the calculation form to submit information</p>
+		
+		<button class="orange-button medium-button">CALCULATE NOW!</button>
+	
+		<code>&lt;button class="orange-button medium-button"&gt;CALCULATE NOW!&lt;/button&gt;</code>
+		
+		
+		<!--Orange Button | RECALCULATE-->
+		<h3>Orange Recalculate Button</h3>
+		<p>A button used on the route/ range calculation map</p>
+		
+		<button class="orange-button large-button">RECALCULATE</button>
+		
+		
+		<code>&lt;button class="orange-button large-button"&gt;RECALCULATE&lt;/button&gt;</code>
+		 
+		
+		<!--Orange Button | VIEW STATEWIDE MAP-->
+		<h3>Orange View Statewide Map Button</h3>
+		<p>A button used on the route/ range calculation map, underneath "recalculate"</p>
+		
+		<button class="orange-button large-button">STATEWIDE MAP</button>
+		
+		
+		<code>&lt;button class="orange-button large-button"&gt;STATEWIDE MAP&lt;/button&gt;</code>
+		
+
+		
+		<!--Green Button | VIEW DETAILS-->
+		<h3>Green View Details Button</h3>
+		<p>A button used on the cost comparison detail boxes</p>
+		
+		<button class="green-button small-button">VIEW DETAILS</button>
+	
+		<code>&lt;button class="green-button small-button"&gt;VIEW DETAILS&lt;/button&gt;</code>
+	
+		
+		
+		<!--Blue Buttons-->
+		
+		<!--Blue Button | READ MORE-->
+		<h3>Blue Read More Card Button</h3>
+		<p>A button used on the home page cards</p>
+		
+		<button class="blue-button small-button">READ MORE</button>
+		
+		
+		<code>&lt;button class="blue-button small-button"&gt;READ MORE&lt;/button&gt;</code>
+		
+		
+		<!--Blue Button | PRINT DETAILS-->
+		<h3>Blue Print Details Button</h3>
+		<p>A button used on the detailed cost analysis to print only a select section</p>
+		
+		<button class="blue-button medium-button">PRINT DETAILS</button>
+		
+		
+		<code>&lt;button class="blue-button medium-button"&gt;PRINT DETAILS&lt;/button&gt;</code>
+		
+		
+		<!--Blue Button | PRINT DETAILED COST ANALYSIS-->
+		<h3>Blue Print Entire Detailed Cost Analysis Button</h3>
+		<p>A button used on the detailed cost analysis to print all vehichle type details for business gold plan</p>
+		
+		<button class="blue-button large-button">PRINT DETAILED COST ANALYSIS</button>
+		
+		
+		<code>&lt;button class="blue-button large-button"&gt;PRINT DETAILED COST ANALYSIS&lt;/button&gt;</code>
+		
+		
+		
+		<!--Grey Button-->
+		
+		<!--Grey  Button | SIGN UP NOW!-->
+		<h3>Grey Sign Up Now Button</h3>
+		<p>A button used on the account selection box</p>
+		
+		<button class="grey-button medium-button">SIGN UP NOW!</button>
+		
+		
+		<code>&lt;button class="grey-button medium-button"&gt;SIGN UP NOW!&lt;/button&gt;</code>
+		
+		
+		<!--Grey  Button | LOGIN-->
+		<h3>Grey Sign Login Button</h3>
+		<p>A button used on the member login box on the homepage</p>
+		
+		<button class="grey-button large-button">LOGIN</button>
+		
+		
+		<code>&lt;button class="grey-button large-button"&gt;LOGIN&lt;/button&gt;</code>
+		
+		<!--Other buttons?-->
+	
+		<!--Text boxes-->
+		<hr>
+		<h2>Text Styles</h2>
+	
+	
+	
+		<!--Headings-->
+	
+	
+	
+	
+	
+	</div>
+</body>
+</html>
