@@ -12,24 +12,48 @@ code {
 	padding: 30px 10px 10px 10px;
 }
 
-.small-button{
-	width: 120px;
-}
 
-.medium-button{
-	width: 150px;
-}
-
-.large-button{
-	width: 280px;
-}
-
-.orange-button {
+.orange-button-small {
   font-family: Museo Slab;
   font-weight:500;	
   color: #ffffff;
   font-size: 13px;
   height: 30px; 
+  width: 120px;
+  background: #F68A21;
+  text-align: center;
+  text-decoration: none;
+}
+
+.orange-button:hover {
+  background: #fbbe94;
+  text-decoration: none;
+}
+
+.orange-button-medium {
+  font-family: Museo Slab;
+  font-weight:500;	
+  color: #ffffff;
+  font-size: 13px;
+  height: 30px; 
+  width: 150px;
+  background: #F68A21;
+  text-align: center;
+  text-decoration: none;
+}
+
+.orange-button:hover {
+  background: #fbbe94;
+  text-decoration: none;
+}
+
+.orange-button-large {
+  font-family: Museo Slab;
+  font-weight:500;	
+  color: #ffffff;
+  font-size: 13px;
+  height: 30px; 
+  width: 280px;
   background: #F68A21;
   text-align: center;
   text-decoration: none;
@@ -45,7 +69,8 @@ code {
   font-weight: 500;	
   color: #ffffff;
   font-size: 13px;
-  height: 30px;
+  height: 30px; 
+  width: 120px;
   background: #5CB447;
   text-align: center;
   text-decoration: none;
@@ -56,34 +81,105 @@ code {
   text-decoration: none;
 }
 
-.blue-button {
+.blue-button-small {
   font-family: Museo Slab;
   font-weight: 500;	
   color: #ffffff; 
   font-size: 13px;
   height: 30px;
+  width: 120px;
   background: #6fb4e3;
   text-align: center;
   text-decoration: none;
 }
 
-.blue-button:hover {
+.blue-button-small:hover {
   background: #b3dbea;
   text-decoration: none;
 }
 
-.grey-button {
+.blue-button-medium {
   font-family: Museo Slab;
   font-weight: 500;	
   color: #ffffff; 
   font-size: 13px;
   height: 30px;
+  width: 150px;
+  background: #6fb4e3;
+  text-align: center;
+  text-decoration: none;
+}
+
+.blue-button-medium:hover {
+  background: #b3dbea;
+  text-decoration: none;
+}
+
+.blue-button-large {
+  font-family: museo slab;
+  font-weight: 500;	
+  color: #ffffff; 
+  font-size: 13px;
+  height: 30px;
+  width: 280px;
+  background: #6fb4e3;
+  text-align: center;
+  text-decoration: none;
+}
+
+.blue-button-large:hover {
+  background: #b3dbea;
+  text-decoration: none;
+}
+
+.grey-button-medium{
+  font-family: museo slab;
+  font-weight: 500;	
+  color: #ffffff; 
+  font-size: 13px;
+  height: 30px;
+  width: 150px;
   background: #7a7a7a;
   text-align: center;
   text-decoration: none;
 }
 
-.grey-button:hover {
+.grey-button-medium:hover {
   background: #adadad; 
   text-decoration: none;
+}
+
+.grey-button-large {
+  font-family: museo slab;
+  font-weight: 500;	
+  color: #ffffff; 
+  font-size: 13px;
+  height: 30px;
+  width: 280px;
+  background: #7a7a7a;
+  text-align: center;
+  text-decoration: none;
+}
+
+.grey-button-large:hover {
+  background: #adadad; 
+ 
+  text-decoration: none;
+}
+
+/*--HEADINGS--*/
+
+h2 {
+	font-family: museo sans;
+	font-weight: 700;
+	color: #f58921;
+	font-size: 40px;
+	line-height: 1.2em;
+}
+
+p {
+	font-family: basic gothic pro;
+	font-size: 16px;
+	line-height: 1.2em;
+	color: #7a7a7a;
 }

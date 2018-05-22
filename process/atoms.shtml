@@ -28,40 +28,40 @@
 		<h3>Orange Feature Button</h3>
 		<p>A button used on the main page in feature images</p>
 		
-		<button class="orange-button medium-button">SUBMIT</button>
+		<button class="orange-button-medium">SUBMIT</button>
 		
 		<!-- use the <code> element as well as escape characters to show the html on the webpage so we can copy and paste it easilly -->
 		<!-- < is &lt; > is &gt; -->
-		<code>&lt;button class="orange-button medium-button"&gt;SUBMIT&lt;/button&gt;</code>
+		<code>&lt;button class="orange-button-medium"&gt;SUBMIT&lt;/button&gt;</code>
 
 		
 		<!--Orange Button | CALCULATE NOW-->
 		<h3>Orange Calculate Now Button</h3>
 		<p>A button used on the calculation form to submit information</p>
 		
-		<button class="orange-button medium-button">CALCULATE NOW!</button>
+		<button class="orange-button-medium">CALCULATE NOW!</button>
 	
-		<code>&lt;button class="orange-button medium-button"&gt;CALCULATE NOW!&lt;/button&gt;</code>
+		<code>&lt;button class="orange-button-medium"&gt;CALCULATE NOW!&lt;/button&gt;</code>
 		
 		
 		<!--Orange Button | RECALCULATE-->
 		<h3>Orange Recalculate Button</h3>
 		<p>A button used on the route/ range calculation map</p>
 		
-		<button class="orange-button large-button">RECALCULATE</button>
+		<button class="orange-button-large">RECALCULATE</button>
 		
 		
-		<code>&lt;button class="orange-button large-button"&gt;RECALCULATE&lt;/button&gt;</code>
+		<code>&lt;button class="orange-button-large"&gt;RECALCULATE&lt;/button&gt;</code>
 		 
 		
 		<!--Orange Button | VIEW STATEWIDE MAP-->
 		<h3>Orange View Statewide Map Button</h3>
 		<p>A button used on the route/ range calculation map, underneath "recalculate"</p>
 		
-		<button class="orange-button large-button">STATEWIDE MAP</button>
+		<button class="orange-button-large">STATEWIDE MAP</button>
 		
 		
-		<code>&lt;button class="orange-button large-button"&gt;STATEWIDE MAP&lt;/button&gt;</code>
+		<code>&lt;button class="orange-button-large"&gt;STATEWIDE MAP&lt;/button&gt;</code>
 		
 
 		
@@ -69,9 +69,9 @@
 		<h3>Green View Details Button</h3>
 		<p>A button used on the cost comparison detail boxes</p>
 		
-		<button class="green-button small-button">VIEW DETAILS</button>
+		<button class="green-button">VIEW DETAILS</button>
 	
-		<code>&lt;button class="green-button small-button"&gt;VIEW DETAILS&lt;/button&gt;</code>
+		<code>&lt;button class="green-button"&gt;VIEW DETAILS&lt;/button&gt;</code>
 	
 		
 		
@@ -81,30 +81,30 @@
 		<h3>Blue Read More Card Button</h3>
 		<p>A button used on the home page cards</p>
 		
-		<button class="blue-button small-button">READ MORE</button>
+		<button class="blue-button-small">READ MORE</button>
 		
 		
-		<code>&lt;button class="blue-button small-button"&gt;READ MORE&lt;/button&gt;</code>
+		<code>&lt;button class="blue-button-small"&gt;READ MORE&lt;/button&gt;</code>
 		
 		
 		<!--Blue Button | PRINT DETAILS-->
 		<h3>Blue Print Details Button</h3>
 		<p>A button used on the detailed cost analysis to print only a select section</p>
 		
-		<button class="blue-button medium-button">PRINT DETAILS</button>
+		<button class="blue-button-medium">PRINT DETAILS</button>
 		
 		
-		<code>&lt;button class="blue-button medium-button"&gt;PRINT DETAILS&lt;/button&gt;</code>
+		<code>&lt;button class="blue-button-medium"&gt;PRINT DETAILS&lt;/button&gt;</code>
 		
 		
 		<!--Blue Button | PRINT DETAILED COST ANALYSIS-->
 		<h3>Blue Print Entire Detailed Cost Analysis Button</h3>
 		<p>A button used on the detailed cost analysis to print all vehichle type details for business gold plan</p>
 		
-		<button class="blue-button large-button">PRINT DETAILED COST ANALYSIS</button>
+		<button class="blue-button-large">PRINT DETAILED COST ANALYSIS</button>
 		
 		
-		<code>&lt;button class="blue-button large-button"&gt;PRINT DETAILED COST ANALYSIS&lt;/button&gt;</code>
+		<code>&lt;button class="blue-button-large"&gt;PRINT DETAILED COST ANALYSIS&lt;/button&gt;</code>
 		
 		
 		
@@ -114,20 +114,20 @@
 		<h3>Grey Sign Up Now Button</h3>
 		<p>A button used on the account selection box</p>
 		
-		<button class="grey-button medium-button">SIGN UP NOW!</button>
+		<button class="grey-button-medium">SIGN UP NOW!</button>
 		
 		
-		<code>&lt;button class="grey-button medium-button"&gt;SIGN UP NOW!&lt;/button&gt;</code>
+		<code>&lt;button class="grey-button-medium"&gt;SIGN UP NOW!&lt;/button&gt;</code>
 		
 		
 		<!--Grey  Button | LOGIN-->
 		<h3>Grey Sign Login Button</h3>
 		<p>A button used on the member login box on the homepage</p>
 		
-		<button class="grey-button large-button">LOGIN</button>
+		<button class="grey-button-large">LOGIN</button>
 		
 		
-		<code>&lt;button class="grey-button large-button"&gt;LOGIN&lt;/button&gt;</code>
+		<code>&lt;button class="grey-button-large"&gt;LOGIN&lt;/button&gt;</code>
 		
 		<!--Other buttons?-->
 	
@@ -138,9 +138,14 @@
 	
 	
 		<!--Headings-->
-	
-	
-	
+		
+		<!--Section Headings-->
+		<h2>ALL CAPS FOR H2 HEADINGS</h2>
+	    <code>&lt;h2&gt; TEXT ALL CAPS &lt;/h2&gt;</code>
+		
+		<!--Body Text-->
+		<p> Basic Gothic Pro for all body text </p>
+	    <code>&lt;p&gt; Body Copy &lt;/p&gt;</code>
 	
 	
 	</div>

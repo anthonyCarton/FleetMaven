@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <title>FM-Start Somewhere 01</title>
 
+<!--#include virtual="../includes/head-include.html"-->
 
 <!-- link draft JS files to this doc -->
-<script src="start-somewhere-01.js"></script>
-
-
+<script src="function-fuelAve.js"></script>
 <!-- link style sheet -->
 <link href="FM-01.css" rel="stylesheet" type="text/css">
 
@@ -16,7 +15,14 @@
 </head>
 <body>
 
+<!-- This is the API Endpoint for the Gasoline Price Database -->
+<!-- https://data.colorado.gov/resource/xyh2-p9cg.json -->
 
+<script>
+
+
+</script>
+ 
   <form id="userEntry">
     <p>First Name: <input></p>
     <p>Last Name: <input></p>
@@ -45,8 +51,6 @@
     <p>Average fuel cost for the last year: <output name="aveFuel"></output>000</p>
 
   </form>
-
-
-
+  
 </body>
 </html>
