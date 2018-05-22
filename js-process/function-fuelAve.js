@@ -4,6 +4,8 @@
 
 // Start only after DOM is ready, using prefered syntax: $(handler)
 $(function () {
+	'use strict';
+
 
 
 
