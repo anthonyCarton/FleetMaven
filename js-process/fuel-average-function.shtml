@@ -35,19 +35,28 @@
 
   </form>
   <form id="fuelAve">
-    <!-- The second value will be selected initially -->
-    <select name="fuelType"> <!--Supplement an id here instead of using 'text'-->
-        <option value="" selected></option>
-        <option value="gas">Gasoline</option>
-        <option value="e85">E85</option>
-        <option value="cng">CNG</option>
-        <option value="lpg">LPG</option>
-        <option value="die">Diesel</option>
-        <option value="b20">BioDiesel B20</option>
-        <option value="b10">BioDiesel B100</option>
-        <option value="ele">Electricity</option>
-      </select>
+	<!-- The second value will be selected initially -->
+	<select id="fuelType"> <!--Supplement an id here instead of using 'text'-->
+	  <option value="" selected></option> 
+	  <option value="gas">Gasoline</option>
+	  <option value="e85">E85</option>
+	  <option value="cng">CNG</option>
+	  <option value="lpg">LPG</option>
+	  <option value="die">Diesel</option>
+	  <option value="b20">BioDiesel B20</option>
+	  <option value="b10">BioDiesel B100</option>
+	  <option value="ele">Electricity</option>
+	</select>
 
+	<select id="depInt">
+	  <option value=1 selected>1</option>
+	  <option value=2>2</option>
+	  <option value=3>3</option>
+	  <option value=4>4</option>
+	  <option value=5>5</option>
+	  <option value=6>6</option>
+	  <option value=7>7</option>
+	</select>
     <p>Average fuel cost for the last year: <output name="aveFuel"></output>000</p>
 
   </form>
