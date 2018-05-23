@@ -15,7 +15,7 @@
 	height:125px;
 }
 
-.feature {
+.fm-feature {
 	min-height:500px;
 }
 
@@ -25,18 +25,42 @@
 	margin-top:70px;
 }
 
-.login {
+.fm-login {
 	margin-top:70px;
 	min-height:315px;
 }
 
-.member-options {
+.fm-home-memopt {
 	margin-top:70px;
 	min-height:400px;
 }
+
+.fm-user-info {
+	min-height:700px;
+}
+
+.fm-cost-over {
+	min-height:700px;
+}
+
+.fm-memberoptions {
+}
+
+	.fm-create-acct {
+		min-height: 600px;
+	}
+	.fm-bus-gold {
+		min-height: 250px;
+	}
+	.fm-bus-free {
+		min-height: 150px;
+	}
+	.fm-per-free {
+		min-height: 150px;
+	}
+
 
 .fm-footer {
 	min-height:70px;
 	margin-top:155px;
 }
-

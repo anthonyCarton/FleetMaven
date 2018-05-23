@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fleet Maven</title>
+<!-- Prototype 10 Page 2 Titled "Calculator + Payment" -->
+
+<!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
+<!--#include virtual="includes/head-include.html" -->
+
+</head>
+
+<body>
+<div class="grid-container">
+	<!-- Start Header Include -->
+	<!--#include virtual="includes/fleet-maven-header.html"-->
+	<!-- End Header Incliude -->
+	<section class="grid-100 grid-parent">
+		<div class="grid-25 black fm-user-info">.fm-user-info</div>
+		<div class="push-5 grid-70 black fm-cost-over">.fm-cost-over</div>
+	</section>
+	<section class="grid-100 grid-parent black fm-memberoptions">
+		<h3>.fm-memberoptions</h3>
+		<div class="grid-25 black fm-create-acct">.fm-create-acct</div>
+		<div class="push-5 grid-70 grid-parent">
+			<div class="grid-100 black fm-bus-gold">.fm-bus-gold</div>
+			<div class="grid-100 black fm-bus-free">.fm-bus-free</div>
+			<div class="grid-100 black fm-per-free">.fm-per-free</div>
+		</div>
+	</section>
+	<section class="grid-100 grid-parent black fm-payment">.fm-payment
+		
+		
+	</section>
+	<!-- Start Footer Include -->
+	<!--#include virtual="includes/fleet-maven-footer.html"-->
+	<!-- End Footer Include -->
+</div>
+</body>
+</html>
