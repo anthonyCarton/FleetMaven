@@ -18,14 +18,73 @@
 	<section class="grid-100 grid-parent black fm-feature">.fm-feature</section>
 	<section class="grid-100 grid-parent">
 		<section class="grid-66 grid-parent">	
-			<div class="grid-45 fm-card">.fm-card</div>
-			<div class="push-5 grid-45 fm-card">.fm-card</div>
+			
+			<!--top card row across-->
+			
+			<!--COMPARE CARD 1-->
+			<div class="grid-45 fm-card">.fm-card
+				<h4>Compare</h4>
+				<h3>Take our vehicle calculator for a test drive!</h3>
+				<img src="" alt=""/>
+				<a href="calculator.shtml"><button class="orange-button medium">CALCULATE NOW!</button></a>
+			</div>
+			
+			<!--LIFETIME CARD 2-->
+			<div class="push-5 grid-45 fm-card">.fm-card
+				<h4>Lifetime</h4>
+				<h3>Hidden costs impact your bottom-line</h3>
+				<p class="intro">Get the facts on the real costs of fleet vehicle ownership to save you time &amp; money.</p>
+				<p>Get the best cost-comparison estimates on the vehicles you need to make your business run smoothly and effeciently.</p>
+				<p>Let us save you time and money so that you can focus on what you do best, running your business.</p>
+				<img src="" alt=""/>
+				<a href="calculator.shtml"><button class="green-button medium">GET ESTIMATE</button></a>
+			
+			</div>
+			
 			<div class="clear"></div>
-			<div class="grid-45 fm-card">.fm-card</div>
-			<div class="push-5 grid-45 fm-card">.fm-card</div>
+			
+			
+			<!--middle card row across-->
+			
+			<!--RANGE CALCULATION CARD 3-->
+			<div class="grid-45 fm-card">.fm-card
+				<h4>Range Calculation</h4>
+				<h3>Calculate range with our gold memebership</h3>
+				<p>Our customized range calculator computes your range based on your local service area. We account for Colorado terrain and traffic on vehicle range for your EV, CNG, diesel and gas powered vehicles.</p>
+				<img src="" alt=""/> 
+				<a href="calculator.shtml"><button class="orange-button medium">SIGN UP NOW!</button></a>
+			</div>
+			
+			<!--MAPS CARD 4-->
+			<div class="push-5 grid-45 fm-card">.fm-card
+				<h4>Maps</h4>
+				<h3>No h3 copy currently</h3>
+				<p>No paragraph copy currently.</p>
+				<a href=""><button class="green-button medium">LEARN MORE</button></a>
+			</div>
+			
 			<div class="clear"></div>
-			<div class="grid-45 fm-card">.fm-card</div>
-			<div class="push-5 grid-45 fm-card">.fm-card</div>
+			
+			
+			<!--bottom card row across-->
+			
+			<!--TECHNOLOGY CARD 5-->
+			<div class="grid-45 fm-card">.fm-card
+				<h4>Technology</h4> 
+				<h3>Electric Vehicles &amp; the economy</h3>
+				<p>No paragraph copy currently.</p>
+				<a href="calculator.shtml"><button class="green-button medium">LEARN MORE</button></a>
+			</div>
+			
+			<!--COLORADO CARD 6-->
+			<div class="push-5 grid-45 fm-card">.fm-card
+				<h4>Colorado</h4> 
+				<h3>Colorado clean air plan</h3>
+				<p>In July of 2017, Governor John Hickenlooper signed Executive Order D 2017-015, "Supporting Colorado's Clean Energy Transition." Recognizing the...</p>
+				<a href="airquality.shtml"><button class="green-button medium">LEARN MORE</button></a>
+			</div>
+			<!--end of feature cards 1-6-->
+			
 		</section>
 		<aside class="grid-33">
 			<section class="fm-login black">.fm-login</section>

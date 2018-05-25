@@ -27,41 +27,49 @@
 	background-color: red;
 }
 
+/* CONTAINER STYLES */
+.grid-container {
+}
 
 /* HEADER STYLES */
 .fm-header {
-	height:125px;
-	background: #ffffff;
+	-webkit-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
+	-moz-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
+	box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
+	margin-bottom:50px;
 }
 	/* header styles */
-	.fm-header-color {	
-
-	}
-
 	.fm-header-black {	
 		background-color:black;
-		height:32px;
+		padding-top:32px;
 	}
 
 	.fm-header-grey {	
 		background-color:#7A7A7A;
+		background-repeat: no-repeat;
 		height:20px;
+		overflow: hidden;
+		padding:0;
 	}
 
 	.fm-header-green {	
 		background-color:#5CB446;
-		background-image: image();
 		height:20px;
+	}
+
+	.fm-header-white {
+		background-color: #ffffff;
+		height:80px;
 	}
 
 	/* NAV BAR STYLES*/
 
-	#nav li::before {
+	.nav li::before {
 		content: none; 
 	}
 
 
-	#nav li{
+	.nav li{
 		text-decoration: none;
 		font-family: "museo-sans";
 		font-weight: 700;
@@ -71,14 +79,14 @@
 		display: inline;
 		margin-left: 3px;
 		margin-right: 3px;
-		float: right;
-	}
 
-	#nav li a:link {    
+}
+
+	.nav li a:link {    
 		text-decoration:none; 
 	}
 
-	#nav li a:hover {  
+	.nav li a:hover {  
 		color:#ADADAD;  
 		text-decoration:none; 
 	}
