@@ -6,6 +6,12 @@
     width: 320px;
   }
 }
+
+/* Set all images, embeds, objects, videos to have a maximum width of 100% of the size of the box they are in */
+img, embed, object, video {
+	max-width:100%;
+}
+
 .clear {
   clear: both;
   display: block;

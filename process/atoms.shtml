@@ -24,110 +24,92 @@
 		
 		<!--Orange Buttons-->
 		
-		<!--Orange Button | SUBMIT-->
-		<h3>Orange Feature Button</h3>
-		<p>A button used on the main page in feature images</p>
 		
-		<button class="orange-button-medium">SUBMIT</button>
-		
-		<!-- use the <code> element as well as escape characters to show the html on the webpage so we can copy and paste it easilly -->
-		<!-- < is &lt; > is &gt; -->
-		<code>&lt;button class="orange-button-medium"&gt;SUBMIT&lt;/button&gt;</code>
-
-		
-		<!--Orange Button | CALCULATE NOW-->
-		<h3>Orange Calculate Now Button</h3>
-		<p>A button used on the calculation form to submit information</p>
-		
-		<button class="orange-button-medium">CALCULATE NOW!</button>
-	
-		<code>&lt;button class="orange-button-medium"&gt;CALCULATE NOW!&lt;/button&gt;</code>
-		
-		
-		<!--Orange Button | RECALCULATE-->
-		<h3>Orange Recalculate Button</h3>
+		<!--Orange Button | SMALL-->
+		<h3>Orange Small</h3>
 		<p>A button used on the route/ range calculation map</p>
 		
-		<button class="orange-button-large">RECALCULATE</button>
+		<button class="orange-button small">TEXT</button>
 		
 		
-		<code>&lt;button class="orange-button-large"&gt;RECALCULATE&lt;/button&gt;</code>
+		<code>&lt;button class="orange-button small"&gt;TEXT&lt;/button&gt;</code>
 		 
 		
-		<!--Orange Button | VIEW STATEWIDE MAP-->
-		<h3>Orange View Statewide Map Button</h3>
-		<p>A button used on the route/ range calculation map, underneath "recalculate"</p>
+		<!--Orange Button | MEDIUM-->
+		<h3>Orange Medium</h3>
+		<p>A button used on the account selection box</p>
 		
-		<button class="orange-button-large">STATEWIDE MAP</button>
+		<button class="orange-button medium">TEXT</button>
 		
 		
-		<code>&lt;button class="orange-button-large"&gt;STATEWIDE MAP&lt;/button&gt;</code>
+		<code>&lt;button class="orange-button medium"&gt;TEXT&lt;/button&gt;</code>
 		
+	
+				
+		<!--Orange Button | LARGE-->
+		<h3>Orange Large</h3>
+		<p>A button used on the account selection box</p>
+		
+		<button class="orange-button large">TEXT</button>
+		
+		
+		<code>&lt;button class="orange-button large"&gt;TEXT&lt;/button&gt;</code>
 
 		
-		<!--Green Button | VIEW DETAILS-->
-		<h3>Green View Details Button</h3>
-		<p>A button used on the cost comparison detail boxes</p>
+		<!--Green Button | SMALL-->
+		<h3>Green Small</h3>
+		<p>A button used on the route/ range calculation map</p>
 		
-		<button class="green-button">VIEW DETAILS</button>
+		<button class="green-button small">TEXT</button>
+		
+		
+		<code>&lt;button class="green-button small"&gt;TEXT&lt;/button&gt;</code>
+		 
+		
+		<!--Green Button | MEDIUM-->
+		<h3>Green Medium</h3>
+		<p>A button used on the account selection box</p>
+		
+		<button class="green-button medium">TEXT</button>
+		
+		
+		<code>&lt;button class="green-button medium"&gt;TEXT&lt;/button&gt;</code>
+		
 	
-		<code>&lt;button class="green-button"&gt;VIEW DETAILS&lt;/button&gt;</code>
+				
+		<!--Green Button | LARGE-->
+		<h3>Green Large</h3>
+		<p>A button used on the account selection box</p>
+		
+		<button class="green-button large">LOGIN</button>
+		
+		
+		<code>&lt;button class="green-button large"&gt;LOGIN&lt;/button&gt;</code>
 	
 		
 		
-		<!--Blue Buttons-->
+		<!--Blue Buttons |PRINTING ONLY-->
 		
-		<!--Blue Button | READ MORE-->
+		<!--Blue Button | Print Cost Analysis Details-->
 		<h3>Blue Read More Card Button</h3>
 		<p>A button used on the home page cards</p>
 		
-		<button class="blue-button-small">READ MORE</button>
+		<button class="blue-button large">PRINT COST ANALYSIS DETAILS</button>
 		
 		
-		<code>&lt;button class="blue-button-small"&gt;READ MORE&lt;/button&gt;</code>
+		<code>&lt;button class="blue-button large"&gt;PRINT COST ANALYSIS DETAILS&lt;/button&gt;</code>
 		
 		
-		<!--Blue Button | PRINT DETAILS-->
+		<!--Blue Button | Single Section Details-->
 		<h3>Blue Print Details Button</h3>
 		<p>A button used on the detailed cost analysis to print only a select section</p>
 		
-		<button class="blue-button-medium">PRINT DETAILS</button>
+		<button class="blue-button medium">PRINT DETAILS</button>
 		
 		
-		<code>&lt;button class="blue-button-medium"&gt;PRINT DETAILS&lt;/button&gt;</code>
+		<code>&lt;button class="blue-button medium"&gt;PRINT DETAILS&lt;/button&gt;</code>
+	
 		
-		
-		<!--Blue Button | PRINT DETAILED COST ANALYSIS-->
-		<h3>Blue Print Entire Detailed Cost Analysis Button</h3>
-		<p>A button used on the detailed cost analysis to print all vehichle type details for business gold plan</p>
-		
-		<button class="blue-button-large">PRINT DETAILED COST ANALYSIS</button>
-		
-		
-		<code>&lt;button class="blue-button-large"&gt;PRINT DETAILED COST ANALYSIS&lt;/button&gt;</code>
-		
-		
-		
-		<!--Grey Button-->
-		
-		<!--Grey  Button | SIGN UP NOW!-->
-		<h3>Grey Sign Up Now Button</h3>
-		<p>A button used on the account selection box</p>
-		
-		<button class="grey-button-medium">SIGN UP NOW!</button>
-		
-		
-		<code>&lt;button class="grey-button-medium"&gt;SIGN UP NOW!&lt;/button&gt;</code>
-		
-		
-		<!--Grey  Button | LOGIN-->
-		<h3>Grey Sign Login Button</h3>
-		<p>A button used on the member login box on the homepage</p>
-		
-		<button class="grey-button-large">LOGIN</button>
-		
-		
-		<code>&lt;button class="grey-button-large"&gt;LOGIN&lt;/button&gt;</code>
 		
 		<!--Other buttons?-->
 	
@@ -137,16 +119,59 @@
 	
 	
 	
-		<!--Headings-->
+	<!--Headings-->
 		
-		<!--Section Headings-->
-		<h2>ALL CAPS FOR H2 HEADINGS</h2>
-	    <code>&lt;h2&gt; TEXT ALL CAPS &lt;/h2&gt;</code>
+		
+		<!--Card Headings-->
+		
+		
+		<!--Page Section Headings-->
+		<h1>H1 Page Section Headings</h1>
+	    <code>&lt;h1&gt; TEXT ALL CAPS &lt;/h1&gt;</code>
+		
+		<!--Card Subtitles <h3>-->
+		<h3 class="fm-card"> Feature card subtitles are h3 and green </h3>
+	    <code>&lt;h3 class="card"&gt; Feature card subtitles &lt;/h3&gt;</code>
+	
+		<!--Card Subtitles <h3>-->
+		<h4 class="card"> Feature card section headings are h4 and grey </h4>
+	    <code>&lt;h4 class="card"&gt; Feature card small section heading &lt;/h3&gt;</code>
+		
+		<!--Detail Analysis Cost | Numbers-->
+		<h3 class="detailed-analysis"> $<span class="grey-text">58,539.00</span></h3>
+	    <code>&lt;h4 class="card"&gt; Feature card small section heading &lt;/h3&gt;</code>
+		
+		
+		<!--Submission Form | Entry section titles-->
+		<h5> Sumbmission form section titles </h5>
+	    <code>&lt;h5&gt;Submission section tiles &lt;/h5&gt;</code>
+		
+		
+		
+	<!--Body Text Styles-->
 		
 		<!--Body Text-->
 		<p> Basic Gothic Pro for all body text </p>
 	    <code>&lt;p&gt; Body Copy &lt;/p&gt;</code>
-	
+		
+		<!--Body Text-->
+		<p class="intro"> Intro paragraphs on feature cards </p>
+	    <code>&lt;p class="intro"&gt; Intro paragraph text &lt;/p&gt;</code>
+		
+		<!--Body Text | Detailed Cost Boxes under Cost-->
+		<p class="detailed-analysis"> Cost of Ownership For <span class="green-text">5</span> years </p>
+	    <code>&lt;p class="detailed-analysis&gt; Body Copy Uppercase &lt;/p&gt;</code>
+				
+		<!--Field Text | Submission Lists-->
+		<p class="submission-lists"> Selection 1</p>
+	    <code>&lt;p class="submission-lists"&gt; Submission List Text &lt;/p&gt;</code>
+		
+		
+		
+	<!--bullet image-->	
+		<ul> 
+			<li> Bullet Color because image becomes unrecognizable when scaled down.</li>
+		</ul>
 	
 	</div>
 </body>

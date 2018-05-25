@@ -9,7 +9,23 @@
 <!--#include virtual="includes/head-include.html" -->
 
 </head>
-
 <body>
+<div class="grid-container">
+	<!-- Start Header Include -->
+	<!--#include virtual="includes/fleet-maven-header.html"-->
+	<!-- End Header Incliude -->
+	<section class="grid-100 grid-parent black fm-free-lifetime">.fm-free-lifetime</section>
+	<section class="grid-100 grid-parent black fm-fuel-map">.fm-fuel-map</section>
+	<section class="grid-100 grid-parent">
+		<div class="grid-33 fm-card">.fm-card</div>
+		<div class="grid-33 fm-card">.fm-card</div>
+		<div class="grid-33 fm-card">.fm-card</div>		
+	</section>
+	<!-- Start Footer Include -->
+	<!--#include virtual="includes/fleet-maven-footer.html"-->
+	<!-- End Footer Include -->
+</div>
+
+
 </body>
 </html>

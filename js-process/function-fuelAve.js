@@ -78,6 +78,22 @@ $(function () {
 			gasHist.push(parseFloat(weeklyPrice));
 		}
 	});
+	
+	
+	// Electricity Averages in CO from last calendar year
+	let eleCall = {
+	  "async": false,
+	  "crossDomain": true,
+	  "url": "https://data.colorado.gov/resource/tvek-dibi.json?%24%24app_token=gNqVzSHJ7pWovzVu8pRHdiMHe&state=CO&year=2017&%24select=avg(commercialprice)%2C%20avg(residentialprice)",
+	  "method": "GET",
+	  "headers": {
+		"content-type": "application/json"
+	  }
+	};
+
+	$.ajax(eleCall).done(function (response) {
+	  console.log(response);
+	});
 
 
 

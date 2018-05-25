@@ -3,13 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Fleet Maven</title>
-<!-- Prototype Page 5 Titled "MVP Gold" -->
+<!-- Prototype 10 Page 5 Titled "BUSINESS GOLD: BACKGROUND OPT2" -->
 
 <!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
 <!--#include virtual="includes/head-include.html" -->
 
 </head>
-
 <body>
+<div class="grid-container">
+	<!-- Start Header Include -->
+	<!--#include virtual="includes/fleet-maven-header.html"-->
+	<!-- End Header Incliude -->
+	<section class="grid-100 grid-parent black fm-compare-lifetime">.fm-compare-lifetime</section>
+	<section class="grid-100 grid-parent fm-best-option">
+		<h3>.fm-best-option</h3>
+		<div class="grid-66 black fm-estimates">.fm-estimates</div>
+		<div class="grid-33 black fm-explain">.fm-explain</div>
+	</section>
+	<section class="grid-100 grid-parent fm-best-option">
+		<h3>.fm-best-option</h3>
+		<div class="grid-66 black fm-estimates">.fm-estimates</div>
+		<div class="grid-33 black fm-explain">.fm-explain</div>
+	</section>
+	<section class="grid-100 grid-parent fm-best-option">
+		<h3>.fm-best-option</h3>
+		<div class="grid-66 black fm-estimates">.fm-estimates</div>
+		<div class="grid-33 black fm-explain">.fm-explain</div>
+	</section>
+	<section class="grid-100 grid-parent fm-best-option">
+		<h3>.fm-best-option</h3>
+		<div class="grid-66 black fm-estimates">.fm-estimates</div>
+		<div class="grid-33 black fm-explain">.fm-explain</div>
+	</section>
+	<!-- Start Footer Include -->
+	<!--#include virtual="includes/fleet-maven-footer.html"-->
+	<!-- End Footer Include -->
+</div>
+
+
 </body>
 </html>

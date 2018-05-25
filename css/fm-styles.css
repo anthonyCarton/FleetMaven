@@ -1,7 +1,24 @@
 @charset "UTF-8";
 /* CSS Document */
 
-/* Testing Styles */
+/*	Fleet Maven Colors for Reference
+	
+	FM Dark Green: 	#5CB446
+	FM Med Green: 	#B4D5A0
+	FM Light Green:	#DDE9CF
+
+	FM Dark Orange:	#F68A21
+	FM Light Orange:#F7E0D0
+	
+	FM Dark Blue:	#6FB5E4
+	FM Med Blue:	#B3DBEA
+	FM Light Blue:	#DAE6EA
+
+	FM Med Grey:	#7A7A7A
+
+*/
+
+/* TEST STYLES */
 .black {
 	border:solid medium black;
 	min-height:100px;
@@ -10,10 +27,73 @@
 	background-color: red;
 }
 
-/* Structural Styles */
+
+/* HEADER STYLES */
 .fm-header {
 	height:125px;
+	background: #ffffff;
 }
+	/* header styles */
+	.fm-header-color {	
+
+	}
+
+	.fm-header-black {	
+		background-color:black;
+		height:32px;
+	}
+
+	.fm-header-grey {	
+		background-color:#7A7A7A;
+		height:20px;
+	}
+
+	.fm-header-green {	
+		background-color:#5CB446;
+		background-image: image();
+		height:20px;
+	}
+
+	/* NAV BAR STYLES*/
+
+	#nav li::before {
+		content: none; 
+	}
+
+
+	#nav li{
+		text-decoration: none;
+		font-family: "museo-sans";
+		font-weight: 700;
+		font-size: 14px;
+		color: #7a7a7a;
+		text-transform: capitalize;
+		display: inline;
+		margin-left: 3px;
+		margin-right: 3px;
+		float: right;
+	}
+
+	#nav li a:link {    
+		text-decoration:none; 
+	}
+
+	#nav li a:hover {  
+		color:#ADADAD;  
+		text-decoration:none; 
+	}
+
+	.logo {
+		width: 210px;
+		height: 60px;
+		vertical-align:middle;
+	}
+
+	/*end nav bar style*/
+
+
+
+
 
 .fm-feature {
 	min-height:500px;
@@ -59,8 +139,194 @@
 		min-height: 150px;
 	}
 
+.fm-free-lifetime {
+	min-height:330px;
+}
+
+.fm-fuel-map {
+	min-height:600px;
+}
+
+.fm-compare-lifetime {
+	min-height:200px;
+}
+
+.fm-best-option {
+	
+}
+
+	.fm-estimates {
+		min-height:650px;
+	}
+	.fm-explain {
+		min-height:650px;
+	}
+
 
 .fm-footer {
 	min-height:70px;
 	margin-top:155px;
+	background: #7a7a7a;
 }
+
+
+
+/*atom styles*/
+
+
+.small {
+	width: 110px;
+}
+
+.medium {
+	width: 190px;
+}
+
+.large {
+	width: 280px;
+}
+
+
+.green-button {
+	background: #5CB447;
+}
+
+.green-button:hover {
+  background: #b4d5a0;
+  text-decoration: none;
+}
+
+
+.orange-button {
+	background: #F68A21;
+}
+
+.orange-button:hover {
+  background: #fbbe94;
+  text-decoration: none;
+}
+
+.blue-button {
+	background: #6fb4e3;
+}
+
+.blue-button:hover {
+  background: #b3dbea;
+  text-decoration: none;
+}
+
+button {
+  font-family: "museo-slab";
+  font-weight:500;	
+  color: #ffffff;
+  font-size: 13px;
+  height: 30px; 
+  border: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+/*--HEADINGS--*/
+
+.green-text {
+	color: #5CB447;
+}
+
+.grey-text {
+	color: #7A7A7A;
+}
+
+.orange-text {
+	color: #F68A21;
+}
+
+h1 {
+	font-family: "museo-sans";
+	font-weight: 700;
+	color: #5CB447;
+	font-size: 30px;
+	text-transform: uppercase;
+	line-height: 1.2em;
+}
+
+h5 {
+	font-family: "museo-sans";
+	font-weight: 700;
+	color: #343434;
+	font-size: 11px;
+	text-transform: capitalize;
+	line-height: 1.2em;
+}
+
+p {
+	font-family: "ff-basic-gothic-pro";
+	font-size: 14px;
+	line-height: 1.2em;
+	color: #7a7a7a;
+}
+
+.fm-card h3{
+	font-family: "museo-sans";
+	font-weight: 700;
+	color: #5CB447;
+	font-size: 20px;
+	text-transform: uppercase;
+	line-height: 1.2em;
+}
+
+.fm-card h4{
+  font-family: "museo-slab";
+	font-weight: 500;
+	color: #ADADAD;
+	font-size: 16px;
+	text-transform: capitalize;
+	line-height: 1.2em;
+}
+
+.detailed-analysis h3{
+	font-family: "museo-sans";
+	font-weight: 700;
+	color: #5CB447;
+	font-size: 55px;
+	line-height: 1.2em;
+}
+
+.submission-lists p{
+	font-family: "museo-sans";
+	font-size: 12px;
+	text-transform: capitalize;
+	line-height: 1.2em;
+	color: #7a7a7a;
+}
+
+.detailed-analysis p {
+	font-family: "museo-sans";
+	font-size: 14px;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	color: #7a7a7a;
+}
+
+p.intro {
+  font-family: "museo-slab";
+	font-size: 18px;
+	text-transform:none;
+	line-height: 1.2em;
+	color: #7a7a7a;
+}
+/*list bullets*/
+
+ul {list-style: none}
+
+li {
+	font-family: "ff-basic-gothic-pro";
+	color: #7a7a7a;
+}
+
+li::before {
+	content: "•"; 
+	color: #F68A21;
+    display: inline-block; 
+	width: 1em;
+    margin-left: -1em}

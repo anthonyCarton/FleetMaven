@@ -3,13 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Fleet Maven</title>
-<!-- Prototype Page 6 Titled "Air Quality" -->
+<!-- Prototype 10 Page 6 Titled "CO Air Quality" -->
 
 <!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
 <!--#include virtual="includes/head-include.html" -->
 
 </head>
-
 <body>
+<div class="grid-container">
+	<!-- Start Header Include -->
+	<!--#include virtual="includes/fleet-maven-header.html"-->
+	<!-- End Header Incliude -->
+
+	<section class="grid-100 grid-parent black fm-feature">.fm-feature</section>
+	
+	<section class="grid-100 grid-parent">
+		<div class="grid-33 fm-card">.fm-card</div>
+		<div class="grid-33 fm-card">.fm-card</div>
+		<div class="grid-33 fm-card">.fm-card</div>		
+	</section>
+	
+	<section class="grid-100 grid-parent">
+		<div class="grid-33 fm-card">.fm-card</div>
+		<div class="grid-33 fm-card">.fm-card</div>
+		<div class="grid-33 fm-card">.fm-card</div>		
+	</section>
+
+	<!-- Start Footer Include -->
+	<!--#include virtual="includes/fleet-maven-footer.html"-->
+	<!-- End Footer Include -->
+</div>
 </body>
 </html>
