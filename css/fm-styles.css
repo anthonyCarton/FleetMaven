@@ -31,12 +31,6 @@
 .grid-container {
 }
 
-.back-top {
-	position:fixed;
-	bottom:100px;
-	right:110px;
-}
-
 /* HEADER STYLES */
 .fm-header {
 	-webkit-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
@@ -79,23 +73,20 @@
 		text-decoration: none;
 		font-family: "museo-sans";
 		font-weight: 700;
-		font-size: 14px;
+		font-size: 15px;
 		color: #7a7a7a;
 		text-transform: capitalize;
 		display: inline;
-		margin-left: 3px;
-		margin-right: 3px;
+		margin-left: 5px;
+		margin-right: 5px;
 
 }
-
-	.nav li a:link {    
-		text-decoration:none; 
-	}
-
-	.nav li a:hover {  
-		color:#ADADAD;  
-		text-decoration:none; 
-	}
+	/* Any link needs all of these */
+	.nav li a {text-decoration:none;}
+	.nav li a:link {color:#7A7A7A;}
+	.nav li a:visited {color:#7A7A7A;}
+	.nav li a:hover {color:#6FB5E4;}
+	.nav li a:active {color:#B3DBEA;}
 
 	.logo {
 		width: 210px;
@@ -177,10 +168,25 @@
 	}
 
 
+/* FOOTER STYLES */
+
 .fm-footer {
 	min-height:70px;
 	margin-top:155px;
 	background: #7a7a7a;
+	background-image: url(../assets/footer-img-1200px.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	font-family: "museo-sans";
+	font-weight: 700;
+}
+
+	.fm-footer p {
+		color:white;
+	}
+
+.fm-footer ul {
+	color:white;
 }
 
 
@@ -308,7 +314,7 @@ p {
 
 .submission-lists p{
 	font-family: "museo-sans";
-	font-size: 12px;
+	font-size: 16px;
 	text-transform: capitalize;
 	line-height: 1.2em;
 	color: #7a7a7a;
@@ -316,7 +322,7 @@ p {
 
 .detailed-analysis p {
 	font-family: "museo-sans";
-	font-size: 14px;
+	font-size: 16px;
 	text-transform: uppercase;
 	line-height: 1.2em;
 	color: #7a7a7a;

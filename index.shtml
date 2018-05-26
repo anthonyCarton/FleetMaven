@@ -91,8 +91,6 @@
 			<section class="fm-home-memopt black">.fm-home-memopt</section>
 		</aside>
 	</section>
-	<!-- Add this back to top line to the footer outside of the <footer> div, #top is in the Header -->
-	<div class="push-90 grid-10"><a href="#top"><img src="assets/back-top-200px.gif" width="100px"></a></div>
 	<!-- Start Footer Include -->
 	<!--#include virtual="includes/fleet-maven-footer.html"-->
 	<!-- End Footer Include -->
