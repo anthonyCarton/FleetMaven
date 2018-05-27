@@ -17,20 +17,36 @@
 	<!-- End Header Incliude -->
 	<section class="grid-100 grid-parent black fm-feature">.fm-feature</section>
 	<section class="grid-100 grid-parent">
-		<section class="grid-66 grid-parent">	
+		<section class="grid-66 tablet-grid-100 grid-parent">	
 			
 			<!--top card row across-->
 			
 			<!--COMPARE CARD 1-->
-			<div class="grid-45 fm-card">.fm-card
-				<h4>Compare</h4>
+			<div class="grid-45 tablet-grid-45 fm-card">
+				<figure class="pattern-2">
+					<img src="assets/fm-card-01-450px.jpg">
+					<figcaption>
+						<span>The best</span>
+						<span class="emphasis">vehicle choice</span>
+						<span>for your bottom line</span>
+					</figcaption>
+				</figure>
+			  	<h4>Compare</h4>
 				<h3>Take our vehicle calculator for a test drive!</h3>
 				<img src="" alt=""/>
 				<a href="calculator.shtml"><button class="orange-button medium">CALCULATE NOW!</button></a>
 			</div>
 			
 			<!--LIFETIME CARD 2-->
-			<div class="push-5 grid-45 fm-card">.fm-card
+			<div class="push-5 tablet-push-5 grid-45 tablet-grid-45 fm-card">	
+				<figure class="pattern-3">
+					<img src="assets/fm-card-02-450px.jpg">
+					<figcaption>
+						<span>Get to know the</span>
+						<span class="emphasis">lifetime costs</span>
+						<span>of your fleet vehicle</span>
+					</figcaption>
+				</figure>
 				<h4>Lifetime</h4>
 				<h3>Hidden costs impact your bottom-line</h3>
 				<p class="intro">Get the facts on the real costs of fleet vehicle ownership to save you time &amp; money.</p>
@@ -47,7 +63,14 @@
 			<!--middle card row across-->
 			
 			<!--RANGE CALCULATION CARD 3-->
-			<div class="grid-45 fm-card">.fm-card
+			<div class="grid-45 tablet-grid-45 fm-card">
+				<figure class="pattern-1">
+					<img src="assets/fm-card-03-450px.jpg">
+					<figcaption>
+						<span>MPG? MPC?</span>
+						<span class="emphasis">What's the difference?</span>
+					</figcaption>
+				</figure>
 				<h4>Range Calculation</h4>
 				<h3>Calculate range with our gold memebership</h3>
 				<p>Our customized range calculator computes your range based on your local service area. We account for Colorado terrain and traffic on vehicle range for your EV, CNG, diesel and gas powered vehicles.</p>
@@ -56,7 +79,14 @@
 			</div>
 			
 			<!--MAPS CARD 4-->
-			<div class="push-5 grid-45 fm-card">.fm-card
+			<div class="push-5 tablet-push-5 grid-45 tablet-grid-45 fm-card">
+				<figure class="pattern-2">
+					<img src="assets/fm-card-04-450px.jpg">
+					<figcaption>
+						<span>Find fuel for your</span>
+						<span class="emphasis">alternative fuel vehicle</span>
+					</figcaption>
+				</figure>
 				<h4>Maps</h4>
 				<h3>No h3 copy currently</h3>
 				<p>No paragraph copy currently.</p>
@@ -69,7 +99,14 @@
 			<!--bottom card row across-->
 			
 			<!--TECHNOLOGY CARD 5-->
-			<div class="grid-45 fm-card">.fm-card
+			<div class="grid-45 tablet-grid-45 fm-card">
+				<figure class="pattern-3">
+					<img src="assets/fm-card-05-450px.jpg">
+					<figcaption>
+						<span>alternative fuel vehicles</span>
+						<span class="emphasis"> &amp; your business</span>
+					</figcaption>
+				</figure>
 				<h4>Technology</h4> 
 				<h3>Electric Vehicles &amp; the economy</h3>
 				<p>No paragraph copy currently.</p>
@@ -77,7 +114,15 @@
 			</div>
 			
 			<!--COLORADO CARD 6-->
-			<div class="push-5 grid-45 fm-card">.fm-card
+			<div class="push-5 tablet-push-5 grid-45 tablet-grid-45 fm-card">
+				<figure class="pattern-1">
+					<img src="assets/fm-card-06-450px.jpg">
+					<figcaption>
+						<span>Learn about</span>
+						<span class="emphasis">Colorado's</span>
+						<span>Clean Air Plan</span>
+					</figcaption>
+				</figure>
 				<h4>Colorado</h4> 
 				<h3>Colorado clean air plan</h3>
 				<p>In July of 2017, Governor John Hickenlooper signed Executive Order D 2017-015, "Supporting Colorado's Clean Energy Transition." Recognizing the...</p>
