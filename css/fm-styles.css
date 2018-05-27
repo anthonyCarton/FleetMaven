@@ -35,7 +35,7 @@
 
 /* GENERAL TEXT STYLES FIRST */
 h1 {
-	font-family: "museo-sans";
+	font-family: "museo-sans",sans-serif;
 	font-weight: 700;
 	color: #5CB447;
 	font-size: 30px;
@@ -44,7 +44,7 @@ h1 {
 }
 
 h5 {
-	font-family: "museo-sans";
+	font-family: "museo-sans",sans-serif;
 	font-weight: 700;
 	color: #343434;
 	font-size: 11px;
@@ -53,7 +53,7 @@ h5 {
 }
 
 p {
-	font-family: "ff-basic-gothic-pro";
+	font-family: "ff-basic-gothic-pro",sans-serif;
 	font-size: 14px;
 	line-height: 1.2em;
 	color: #7a7a7a;
@@ -100,7 +100,7 @@ p {
 
 	.nav li{
 		text-decoration: none;
-		font-family: "museo-sans";
+		font-family: "museo-sans",sans-serif;
 		font-weight: 700;
 		font-size: 15px;
 		color: #7a7a7a;
@@ -166,7 +166,7 @@ p {
 	}
 
 	.fm-card figcaption {
-		font-family: "museo-sans";
+		font-family: "museo-sans",sans-serif;
 		text-transform: uppercase;
 		font-size: 1rem;
 		position: absolute;
@@ -182,11 +182,11 @@ p {
 	.fm-card figcaption span {
 		background-color:white;
 		margin:2px 0 2px 12px ;
-		padding:0 5px 0 5px;
+		padding:2px 5px 0 5px;
 	}
 
 	.fm-card .emphasis {
-		font-family: "museo-slab";
+		font-family: "museo-slab",serif;
 		color:#F68A21;
 	}
 
@@ -197,7 +197,7 @@ p {
 	}
 
 	.fm-card h3{
-		font-family: "museo-sans";
+		font-family: "museo-sans",sans-serif;
 		font-weight: 700;
 		color: #5CB447;
 		font-size: 20px;
@@ -206,7 +206,7 @@ p {
 	}
 
 	.fm-card h4{
-		font-family: "museo-slab";
+		font-family: "museo-slab",serif;
 		font-weight: 500;
 		color: #ADADAD;
 		font-size: 16px;
@@ -285,7 +285,7 @@ p {
 	background-image: url(../assets/footer-img-1200px.png);
 	background-repeat: no-repeat;
 	background-position: bottom;
-	font-family: "museo-sans";
+	font-family: "museo-sans",sans-serif;
 	font-weight: 700;
 }
 
@@ -344,7 +344,7 @@ p {
 }
 
 button {
-  font-family: "museo-slab";
+  font-family: "museo-slab",serif;
   font-weight:500;	
   color: #ffffff;
   font-size: 13px;
@@ -371,7 +371,7 @@ button {
 
 
 .detailed-analysis h3{
-	font-family: "museo-sans";
+	font-family: "museo-sans",sans-serif;
 	font-weight: 700;
 	color: #5CB447;
 	font-size: 55px;
@@ -379,7 +379,7 @@ button {
 }
 
 .submission-lists p{
-	font-family: "museo-sans";
+	font-family: "museo-sans",sans-serif;
 	font-size: 16px;
 	text-transform: capitalize;
 	line-height: 1.2em;
@@ -387,7 +387,7 @@ button {
 }
 
 .detailed-analysis p {
-	font-family: "museo-sans";
+	font-family: "museo-sans",sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
 	line-height: 1.2em;
@@ -395,7 +395,7 @@ button {
 }
 
 p.intro {
-  font-family: "museo-slab";
+    font-family: "museo-slab",serif;
 	font-size: 18px;
 	text-transform:none;
 	line-height: 1.2em;
@@ -406,7 +406,7 @@ p.intro {
 ul {list-style: none}
 
 li {
-	font-family: "ff-basic-gothic-pro";
+	font-family: "ff-basic-gothic-pro",sans-serif;
 	color: #7a7a7a;
 }
 
