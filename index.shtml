@@ -15,7 +15,89 @@
 	<!-- Start Header Include -->
 	<!--#include virtual="includes/fleet-maven-header.html"-->
 	<!-- End Header Incliude -->
-	<section class="grid-100 grid-parent black fm-feature">.fm-feature</section>
+	
+	<!-- Image Feature Carousel -->
+	<section class="grid-100 grid-parent fm-feature">
+		<!-- Feature Slide 1 -->
+		<div class="feature-slide">
+			<div class="grid-100 grid-parent feature-img">
+				<div class="grid-33 tablet-grid-30 push-66 tablet-push-60 overlay hide-on-mobile"></div>
+				<!-- need a larger image for tablet and mobile-->
+				<img class="grid-100 grid-parent" src="assets/fm-feature-01-1200px.jpg" alt="">
+			</div>
+			<div class="grid-100 grid-parent feature-text">
+				<h1 class="grid-50 tablet-grid-60">	
+					<span>Get the best</span>
+					<span class="emphasis">financial incentives</span>
+					<span>for your business</span>
+					<span class="tag">See the most up-to-date financial incentives for your fleet purchase!</span>
+				</h1>
+				<div class="push-25 tablet-push-10 grid-20 tablet-grid-25">
+					<div class="details">
+						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
+						<button class="medium orange-button">Compare now</button>
+					</div>
+					<div class="details">
+						<p>Are alternative fuel vehicles a cost-effective option for your business?</p>
+						<button class="medium green-button">Learn more</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Feature Slide 2 -->
+		<div class="feature-slide">
+			<div class="grid-100 grid-parent feature-img">
+				<div class="grid-33 tablet-grid-30 push-66 tablet-push-60 overlay hide-on-mobile"></div>
+				<img class="grid-100 grid-parent" src="assets/fm-feature-02-1200px.jpg" alt="">
+			</div>
+			<div class="grid-100 grid-parent feature-text">
+				<h1 class="grid-50 tablet-grid-60">	
+					<span>Get customized</span>
+					<span class="emphasis">range information</span>
+					<span>for your service area</span>
+					<span class="tag">Get customized range answers based on the terrain and speed limits in your area!</span>
+				</h1>
+				<div class="push-25 tablet-push-10 grid-20 tablet-grid-25">
+					<div class="details">
+						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
+						<button class="medium orange-button">Compare now</button>
+					</div>
+					<div class="details">
+						<p>Are alternative fuel vehicles a cost-effective option for your business?</p>
+						<button class="medium green-button">Learn more</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Feature Slide 3 -->
+		<div class="grid-100 grid-parent feature-slide">
+			<div class="grid-100 grid-parent feature-img">
+				<div class="grid-33 tablet-grid-30 push-66 tablet-push-60 overlay hide-on-mobile"></div>
+				<img class="grid-100 grid-parent" src="assets/fm-feature-03-1200px.jpg" alt="">
+			</div>
+			<div class="grid-100 grid-parent feature-text">
+				<h1 class="grid-50 tablet-grid-60">	
+					<span>Cost-benefit analysis</span>
+					<span class="emphasis">saves time and money</span>
+					<span>on fleet purchases</span>
+					<span class="tag">Our powerful cost-benefit analytics deliver precision insights to improve your bottom-line.</span>
+				</h1>
+				<div class="push-25 tablet-push-10 grid-20 tablet-grid-25">
+					<div class="details">
+						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
+						<button class="medium orange-button">Compare now</button>
+					</div>
+					<div class="details">
+						<p>Are alternative fuel vehicles a cost-effective option for your business?</p>
+						<button class="medium green-button">Learn more</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
 	<section class="grid-100 grid-parent">
 		<section class="grid-66 tablet-grid-100 grid-parent">	
 			
@@ -140,5 +222,23 @@
 	<!--#include virtual="includes/fleet-maven-footer.html"-->
 	<!-- End Footer Include -->
 </div>
+<!-- Put this into the JS doc with everything else -->
+<script>
+	var slideIndex = 0;
+	carousel();
+
+	function carousel() {
+		var i;
+		var x = document.getElementsByClassName("feature-slide");
+		for (i = 0; i < x.length; i++) {
+		  x[i].style.display = "none"; 
+		}
+		slideIndex++;
+		if (slideIndex > x.length) {slideIndex = 1} 
+		x[slideIndex-1].style.display = "block"; 
+		setTimeout(carousel, 3000); 
+	}
+</script>
+
 </body>
 </html>

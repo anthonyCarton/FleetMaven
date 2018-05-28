@@ -43,6 +43,14 @@ h1 {
 	line-height: 1.2em;
 }
 
+h2 {
+	font-family: "museo-sans",sans-serif;
+	font-weight: 700;
+	color: #F68A21;
+	text-transform: uppercase;
+	line-height: 1.2em;
+}
+
 h5 {
 	font-family: "museo-sans",sans-serif;
 	font-weight: 700;
@@ -129,8 +137,92 @@ p {
 
 /* FEATURE IMAGE STYLES */
 .fm-feature {
-	min-height:500px;
 }
+
+	.feature-slide {
+		display:none; /* from the slide show instructions */
+		height:450px;
+		overflow:hidden;
+		position:relative;
+	}
+
+	.feature-text {
+		position: absolute;
+		bottom:50px;
+	}
+
+	.feature-text .details {
+		background-color: rgb(122,122,122,.7);
+		padding:10px 20px 20px 10px;
+		margin-top:20px;
+	}
+
+	.feature-text h1 {
+		margin:70px 0 0 0;
+		font-size: 2rem;
+		
+		display: flex;
+		flex-direction:column;
+		align-items:flex-start;
+
+	}
+
+	.feature-text span {
+		color:#F68A21;
+		background-color:white;
+		margin:.25rem 0 .25rem .5rem ;
+		padding:2px 5px 0 5px;
+
+	}
+
+	.feature-text .emphasis {
+		font-family: "museo-slab",serif;
+		color:#343434;
+	}
+
+	.feature-text .tag {
+		font-size: 1rem;
+		padding:5px;
+		line-height: normal;
+		color:#343434;
+		text-transform:none;
+		max-width: 400px;
+
+	}
+
+	.feature-text .details p {
+		margin:0 0 10px 0;
+		color:white;
+	}
+
+	.feature-img {
+		position: absolute;
+	}
+
+	.feature-img .overlay {
+		width:600px;
+		height:600px;
+		background-color: rgb(122,122,122,.5);
+		transform:rotate(10deg);
+		position:absolute;
+		right:-150px;
+		top:-30px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* CARD STYLES */
@@ -214,6 +306,10 @@ p {
 		line-height: 1.2em;
 	}
 
+/*SECTION BACKGROUND STYLE*/
+.background {
+	background-color: #f5f5f5;
+}
 
 /* LOGIN STYLES */
 .fm-login {
@@ -275,6 +371,9 @@ p {
 		min-height:650px;
 	}
 
+.fm-best-option h2 {
+	font-size: 20px;
+}
 
 /* FOOTER STYLES */
 
@@ -401,6 +500,7 @@ p.intro {
 	line-height: 1.2em;
 	color: #7a7a7a;
 }
+
 /*list bullets*/
 
 ul {list-style: none}

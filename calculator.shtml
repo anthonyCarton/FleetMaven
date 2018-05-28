@@ -16,18 +16,72 @@
 	<!--#include virtual="includes/fleet-maven-header.html"-->
 	<!-- End Header Incliude -->
 	<section class="grid-100 grid-parent">
-		<div class="grid-25 black fm-user-info">.fm-user-info</div>
-		<div class="push-5 grid-70 black fm-cost-over">.fm-cost-over</div>
-	</section>
-	<section class="grid-100 grid-parent black fm-memberoptions">
-		<h3>.fm-memberoptions</h3>
-		<div class="grid-25 black fm-create-acct">.fm-create-acct</div>
-		<div class="push-5 grid-70 grid-parent">
+		<div class="grid-50 black fm-user-info">.fm-user-info
+			<h2>Create Account</h2>
+			<div class="grid-55 black fm-create-acct push-5 ">.fm-create-acct</div>
+			
+			<div class="grid-40 black fm-create-acct">
+			</div>
+		</div>
+		
+		<!--Membership Options-->
+		<div class="push-5 grid-45 black fm-cost-over">.fm-cost-over
+			<h2>Membership Options</h2>
 			<div class="grid-100 black fm-bus-gold">.fm-bus-gold</div>
 			<div class="grid-100 black fm-bus-free">.fm-bus-free</div>
 			<div class="grid-100 black fm-per-free">.fm-per-free</div>
 		</div>
 	</section>
+	
+	<!--Business Gold Membership-->
+	<section class="grid-100 grid-parent  background">
+		
+		<div class="grid-100">
+			<div class="grid-50">
+			<h2>Business Gold Membership</h2>
+			<p>Business Gold Member Features Explanation Overview etc. Business Gold Member Features Explanation Overview etc. Business Gold Member Features Explanation Overview etc. Business Gold Member Features Explanation Overview etc.</p>
+			</div>
+		</div>
+		
+		<div class="grid-50 black fm-create-acct push-5 ">.fm-create-acct</div>
+			
+		<div class="grid-45 black fm-create-acct">
+
+	</section>
+		
+	<!--Business Limited-->	
+	<section class="grid-100 grid-parent">
+		
+		<div class="grid-100">
+			<div class="grid-50">
+			<h2>Business Limited Membership</h2>
+			<p>Business Limited Member Features Explanation Overview etc. Business Limited Member Features Explanation Overview etc. Business Limited Member Features Explanation Overview etc. Business Limited Member Features Explanation Overview etc.</p>
+			</div>
+		</div>
+		
+		<div class="grid-50 black fm-create-acct push-5 ">.fm-create-acct</div>
+			
+		<div class="grid-45 black fm-create-acct">
+
+	</section>	
+		
+		
+	<!--Personal Limited Membership-->	
+	<section class="grid-100 grid-parent background">
+		
+		<div class="grid-100">
+			<div class="grid-50">
+			<h2>Personal Limited Membership</h2>
+			<p>Personal Limited Member Features Explanation Overview etc. Personal Limited Member Features Explanation Overview etc. Personal Limited Member Features Explanation Overview etc. Personal Limited Member Features Explanation Overview etc.</p>
+			</div>
+		</div>
+		
+		<div class="grid-50 black fm-create-acct push-5 ">.fm-create-acct</div>
+			
+		<div class="grid-45 black fm-create-acct">
+
+	</section>
+		
 	<section class="grid-100 grid-parent black fm-payment">.fm-payment
 		
 		
