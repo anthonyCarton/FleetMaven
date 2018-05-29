@@ -1,7 +1,5 @@
 // JavaScript Document
 
-
-
 // Start only after DOM is ready, using prefered syntax: $(handler)
 $(function() {
   'use strict';
@@ -28,6 +26,28 @@ $(function() {
   let eleComAve = {"Y0":1};
   let eleResAve = {"Y0":1}; // Comercial and Residential Electricity Averages from data.colorado.gov/Business/Electricity-Revenue-in-Colorado/q6sk-tjm9
 
+  // E85, LPG, Diesel, B20, B100 Averages from afdc.energy.gov/fuels/prices.html (no GET)
+  let e85Ave = {"Y0": 2.68};
+  let lpgAve = {"Y0": 3.86};
+  let dieAve = {"Y0": 2.37};
+  let b20Ave = {"Y0": 2.37};
+  let b10Ave = {"Y0": 2.37};
+
+	
+	
+  // DECLARE INTERFACE VARIABLES
+  let depInt;
+  let fuelType;
+	
+  // WHAT YEAR IS IT?
+  let d = new Date();
+  let thisYear = d.getFullYear();
+  let lastYear = thisYear-1;
+  console.log(thisYear);
+  console.log(lastYear);
+
+  // NOW THAT I KNOW WHAT YEAR IT IS, I WANT TO MAKE THE CALLS SPECIFIC TO THE YEAR.
+	
 
 
   // FUEL / UNIT COMPOUNDER
@@ -106,65 +126,6 @@ $(function() {
   eleCall();
 
 
-  // E85, LPG, Diesel, B20, B100 Averages from afdc.energy.gov/fuels/prices.html (no GET)
-  const e85Ave = {
-    "2017": 2.68,
-    "2018": 2.72,
-    "2019": 2.76,
-    "2020": 2.81,
-    "2021": 2.85,
-    "2022": 2.90,
-    "2023": 2.94,
-    "2024": 2.99
-  };
-  const lpgAve = {
-    "2017": 3.86,
-    "2018": 3.81,
-    "2019": 3.96,
-    "2020": 4.01,
-    "2021": 4.06,
-    "2022": 4.12,
-    "2023": 4.17,
-    "2024": 4.23
-  };
-  const dieAve = {
-    "2017": 2.37,
-    "2018": 2.41,
-    "2019": 2.46,
-    "2020": 2.50,
-    "2021": 2.55,
-    "2022": 2.59,
-    "2023": 2.64,
-    "2024": 2.69
-  };
-  const b20Ave = {
-    "2017": 2.37,
-    "2018": 2.41,
-    "2019": 2.46,
-    "2020": 2.50,
-    "2021": 2.55,
-    "2022": 2.59,
-    "2023": 2.64,
-    "2024": 2.69
-  };
-  const b10Ave = {
-    "2017": 2.37,
-    "2018": 2.41,
-    "2019": 2.46,
-    "2020": 2.50,
-    "2021": 2.55,
-    "2022": 2.59,
-    "2023": 2.64,
-    "2024": 2.69
-  };
-
-
-
-  // DECLARE INTERFACE VARIABLES
-  let depInt;
-  let fuelType;
-
-
 
   // FUEL / UNIT PROJECTOR
   // simpleFuelCompound() projects fuelPrice / unit (gal, lb, etc) based on last year average and escalation rates
@@ -178,8 +139,6 @@ $(function() {
   }
 
 
-
-  // console.log(e85Ave["2018"]); // access one of the object values
 
   // CREATE EVENT LISTENERS
   // depInt  EVENT LISTENER
@@ -243,10 +202,7 @@ $(function() {
 
     }
   });
-
-
-
-
+	
 
 
 

@@ -73,7 +73,6 @@ p {
 	-webkit-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
 	-moz-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
 	box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
-	margin-bottom:50px;
 }
 	/* header styles */
 	.fm-header-black {	
@@ -137,6 +136,8 @@ p {
 
 /* FEATURE IMAGE STYLES */
 .fm-feature {
+	margin-top:50px;
+
 }
 
 	.feature-slide {
@@ -210,27 +211,13 @@ p {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CARD STYLES */
 .fm-card {
 	border: solid medium lightgray;
-	min-height: 485px;
-	margin-top:70px;
+	height: 550px;
+	margin-top:50px;
 	padding:0;
+	position:relative;
 }
 
 	.fm-card figure {
@@ -282,13 +269,19 @@ p {
 		color:#F68A21;
 	}
 
-	.fm-card button, h3, h4, p {
+	.fm-card h3, h4, p {
 		margin-left:20px;
 		margin-right:20px;
 
 	}
 
-	.fm-card h3{
+	.fm-card button {
+		position:absolute;
+		left:20px;
+		bottom:20px;
+	}
+
+	.fm-card h3 {
 		font-family: "museo-sans",sans-serif;
 		font-weight: 700;
 		color: #5CB447;
@@ -297,7 +290,7 @@ p {
 		line-height: 1.2em;
 	}
 
-	.fm-card h4{
+	.fm-card h4 {
 		font-family: "museo-slab",serif;
 		font-weight: 500;
 		color: #ADADAD;
@@ -313,7 +306,7 @@ p {
 
 /* LOGIN STYLES */
 .fm-login {
-	margin-top:70px;
+	margin-top:50px;
 	min-height:315px;
 }
 
@@ -348,11 +341,83 @@ p {
 
 
 /* CALCULATOR STYLES */
+
+.fm-calc-results section {
+	border:solid thin #797979;
+	font-family: "museo-slab",serif;
+
+}
+
+	.fm-calc-results section  h3 {
+		font-weight: 500;
+		color: #7A7A7A;
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		line-height: 1.8rem;	
+	}
+
+	/* CALCULATION RESULTS TABLES STYLES */
+	.fm-calc-results table {
+		table-layout: auto;
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.fm-calc-results thead {
+
+	}
+
+	.fm-calc-results tr {
+
+	}
+
+	/* only details results should hover in vehicle operate, but all results should hover in other tables */
+	.fm-vehicle-operate details tr:hover, .vehicle-purchase tr:hover, .fuel-averages tr:hover, .vehicle-total tr:hover {
+		background-color: whitesmoke;
+	}
+
+	.fm-calc-results th {
+		text-align: left;
+		padding: 10px;
+		color: #F68A21;
+
+	}
+
+	.fm-calc-results .sub {
+		color: #ADADAD;
+		padding-left:2rem;
+	}
+
+	.fm-calc-results td {
+		text-align: right;
+		padding: 10px;
+	}
+
+	.fm-calc-results td::first-letter {
+		color: #5CB446;
+	}
+
+	.fm-calc-results .total th {
+		color: #7A7A7A;
+		font-size: 1.2rem;
+	}
+
+	.fm-vehicle-operate {
+		padding:10px;
+	}
+
+.fm-vehicle-operate details {
+	padding-left:1rem;
+}
+
+
+
+
 .fm-free-lifetime {
 	min-height:330px;
 }
 
-.fm-fuel-map {
+.fm-fuel-map { /*!*/
 	min-height:600px;
 }
 

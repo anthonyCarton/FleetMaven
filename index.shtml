@@ -17,7 +17,7 @@
 	<!-- End Header Incliude -->
 	
 	<!-- Image Feature Carousel -->
-	<section class="grid-100 grid-parent fm-feature">
+	<section class="grid-100 grid-parent fm-feature hide-on-mobile">
 		<!-- Feature Slide 1 -->
 		<div class="feature-slide">
 			<div class="grid-100 grid-parent feature-img">
@@ -222,23 +222,7 @@
 	<!--#include virtual="includes/fleet-maven-footer.html"-->
 	<!-- End Footer Include -->
 </div>
-<!-- Put this into the JS doc with everything else -->
-<script>
-	var slideIndex = 0;
-	carousel();
-
-	function carousel() {
-		var i;
-		var x = document.getElementsByClassName("feature-slide");
-		for (i = 0; i < x.length; i++) {
-		  x[i].style.display = "none"; 
-		}
-		slideIndex++;
-		if (slideIndex > x.length) {slideIndex = 1} 
-		x[slideIndex-1].style.display = "block"; 
-		setTimeout(carousel, 3000); 
-	}
-</script>
-
+<!-- Carousel JavaScript (No need for fm-script-rN.js) This must be at bottom BTW-->
+<script src="js/fm-carousel.js"></script>
 </body>
 </html>

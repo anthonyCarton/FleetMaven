@@ -1,0 +1,540 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fleet Maven Enterprise Calculator</title>
+<!-- Minimum Viable Product we can demonstrate -->
+
+<!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
+<!--#include virtual="includes/head-include.html" -->
+
+</head>
+<body>
+<div class="grid-container">
+<!-- Start Header Include -->
+<!--#include virtual="includes/fleet-maven-header.html"-->
+<!-- End Header Incliude -->
+	
+	<!--section 1-->
+	<section class="grid-100 grid-parent black">
+		<!--collect user information-->
+		TODO: Vehicle Type Select Box
+		TODO: Average Yearly Mileage Entry
+		TODO: Depreciation Interval Select Box
+		TODO: Zip Code
+		
+		<!--return comparison summary (nav)-->
+	</section>
+		
+	<!--main content/results-->
+	<main class="grid-100 grid-parent">
+	
+		<!--section: Best Option-->
+		<section class="fm-calc-results grid-100 grid-parent">
+			<!--best vehicle option header 					(100%)	-->
+			<h2>Best Vehicle Option</h2>
+			<!--Vehicle Information box 					(100%)	-->
+			<section class="vehicle-info grid-100 black">
+				<h3>Vehicle Information</h3>
+				<!-- List information like make model etc. -->
+			</section>
+
+			<!-- Column 									(50%)	-->
+			<div class="col grid-50 grid-parent">
+				<!--Vehicle Operating Costs Estimate Box-->
+				<section class="grid-100 black">
+					<h3>Vehicle Operating Costs Estimate</h3>
+					
+					<!-- Year 1 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-1">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 1 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+
+					<!-- Year 2 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-2">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 2 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+
+					<!-- Year 3 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-3">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 3 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+
+					<!-- Year 4 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-4">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 4 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+
+					<!-- Year 5 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-5">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 5 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+
+					<!-- Year 6 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-6">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 6 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+					
+					<!-- Year 7 Operating Costs Estimate -->
+					<div class="fm-vehicle-operate year-7">
+						<table>
+							<tbody>
+								<tr class="total">
+								  <th scope="row">Total Year 7 Operating Costs:</th>
+								  <td>$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<details>
+							<table>
+							  <tbody>
+								<tr>
+								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Depreciation</th>
+								  <td>$0.00</td>
+								</tr>
+								  <th scope="row">Maintenance Costs</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Tax &amp; Registration</th>
+								  <td>$0.00</td>
+								</tr>
+								<tr>
+								  <th scope="row">Financing and Interest</th>
+								  <td>$0.00</td>
+								</tr>
+							  </tbody>
+							</table>
+						</details>
+					</div>
+				</section>
+			</div>
+
+			
+						
+			<!-- Column 									(50%)	-->
+			<div class="col grid-50 grid-parent">
+				<!-- Vehicle Purchase Box -->
+				<section class="vehicle-purchase grid-100 black">
+					<h3>Vehicle Purchase Costs</h3>
+					<table>
+					  <tbody>
+						<tr>
+						  <th scope="row">MSRP:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row">Tax &amp; Licensing</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row">Dealer Fees</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row">Tax Rebates</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row">Incentives</th>
+						  <td>$0.00</td>
+						</tr>
+					  </tbody>
+					</table>
+				</section>
+				
+				<!-- Estimated Average Fuel Price in the future -->
+				<section class="fuel-averages grid-100 black">
+					<h3>Estimated Average Fuel Prices</h3>
+					<table>
+					  <tbody>
+						<tr>
+						  <th scope="row" class="year-1">Year 1:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-2">Year 2:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-3">Year 3:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-4">Year 4:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-5">Year 5:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-6">Year 6:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-7">Year 7:</th>
+						  <td>$0.00</td>
+						</tr>
+					  </tbody>
+					</table>
+				</section>
+				<!-- Estimated Total Vehicle Costs Box -->
+				<section class="vehicle-total grid-100 black">
+					<h3>Estimated Total Vehicle Costs</h3>
+					<table>
+					  <tbody>
+						<tr>
+						  <th scope="row">Vehicle Purchase Cost</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr class="">
+						  <th scope="row" class="year-1">Year 1 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-2">Year 2 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-3">Year 3 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-4">Year 4 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-5">Year 5 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-6">Year 6 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+						<tr>
+						  <th scope="row" class="year-7">Year 7 Operating Cost:</th>
+						  <td>$0.00</td>
+						</tr>
+					  </tbody>
+					</table>
+			
+				</section>
+			</div>	
+			
+
+			<!-- Refueling Map 	(only show for afvs?)		(100%)	-->
+			<section class="fm-fuel-map grid-100 black">
+				<h3>Alternative Fuel Vehicle Refueling Stations</h3>
+				<!-- Embed code from https://www.afdc.energy.gov/stations/#/find/nearest?show_embed=true-->
+				<div id="afdc-stations">
+					<div id="afdc-stations-loading">Loading alternative fueling station locator...</div>
+				</div>
+				<script type="text/javascript">window.afdcStationsOptions = {"country":"US","localeCountry":"US","path":"/find/nearest","query":{}}</script>
+				<script async defer src="https://widgets.nrel.gov/afdc/station-locator/assets/embed.js"></script>
+				<noscript>Please enable JavaScript to view the alternative fueling station locator.</noscript>
+			
+			</section>
+			
+			<!-- Range Analysis (only show for afvs?)		(100%)	-->
+			<section class="range-analysis grid-100 black">
+				<h3>Customized Range Analysis</h3>
+			
+			</section>
+			
+		</section>
+		
+		
+		<!--section : repeat above-->
+		<section></section>
+	
+	</main>
+	
+<!-- Start Footer Include -->
+<!--#include virtual="includes/fleet-maven-footer.html"-->
+<!-- End Footer Include -->
+</div>
+<!-- FleetMacen JavaScript -->
+<script src="../js/fm-script-r1.js"></script>
+</body>
+</html>

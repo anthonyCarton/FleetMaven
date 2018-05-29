@@ -5,8 +5,12 @@
 <title>Fleet Maven</title>
 <!-- Prototype Page 4 Titled "Free Business" -->
 
+
 <!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
 <!--#include virtual="includes/head-include.html" -->
+
+<!-- Fleet Maven JS (this is not needed on every page) -->
+<script src="js/fm-script-r1.js"></script>
 
 </head>
 <body>
@@ -14,8 +18,52 @@
 	<!-- Start Header Include -->
 	<!--#include virtual="includes/fleet-maven-header.html"-->
 	<!-- End Header Incliude -->
-	<section class="grid-100 grid-parent black fm-free-lifetime">.fm-free-lifetime</section>
-	<section class="grid-100 grid-parent black fm-fuel-map">.fm-fuel-map</section>
+	<section class="grid-100 grid-parent black fm-free-lifetime">
+		<h2>Detailed Lifetime Cost Analysis</h2>
+		
+	<div class="grid-33 black">
+		<!--Best Option Vehicle Table-->
+		<table class="fm-free-lifetime"> <tr> <td colspan="2"><h4>Upfront Cost Estimate</h4r></td> </tr> <tr> <td></td> <td class="green-text"><h3 columnspan="2">$<span class="grey-text">58,539.00</span></h3></td> <tr> <td colspan="2" class="detailed-analysis right-align"><p> Cost of Ownership For<span class="green-text">5</span> years</p></td> </tr> <tr> <td></td> <td colspan="2" class="right-align"><button class="green-button small">UPGRADE</button></td> </tr> </table>
+	</div>
+	<div class="grid-33 black">
+		<!--analysis tables-->	
+		<table class="fm-free-lifetime">
+			<tr>
+				<td colspan="2"><h4>Upfront Cost Estimate</h4r></td>
+			</tr>
+			<tr>
+				<td class="orange-text">MSRP</td>				
+				<td class="grey-text right-align">$0.00</td>
+			</tr>
+			<tr>
+				<td class="orange-text">Tax Rebate</td>		
+				<td class="grey-text right-align">$0.00</td>
+			</tr>
+			<tr>
+				<td class="orange-text">Incentives</td>		
+				<td class="grey-text right-align">$0.00</td>
+			</tr>
+			<tr>
+				<td class="orange-text">Tax &amp; Licensing</td>				
+				<td class="grey-text right-align">$0.00</td>
+			</tr>
+			<tr>
+				<td class="orange-text">Other Fees</td>			
+				<td class="grey-text right-align">$0.00</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="green-text"><h3 columnspan="2"> $<span class="grey-text">58,539.00</span></h3></td>
+			</tr>
+		</table>
+	
+	</div>
+	<div class="grid-33 black"></div>
+		
+	</section>
+	<section class="grid-100 grid-parent black fm-fuel-map">
+		<h2>Alternative Fueling Stations</h2>
+	</section>
 	<section class="grid-100 grid-parent">
 		<div class="grid-33 fm-card">.fm-card</div>
 		<div class="grid-33 fm-card">.fm-card</div>
