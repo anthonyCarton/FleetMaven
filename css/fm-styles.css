@@ -33,7 +33,7 @@
 .grid-container {
 }
 
-.hide-years {
+.hide-years, .not-mvp{
 	display: none;
 }
 
@@ -77,6 +77,8 @@ p {
 	-webkit-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
 	-moz-box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
 	box-shadow: 0px 10px 25px -15px rgba(122,122,122,1);
+	margin-bottom:40px;
+
 }
 	/* header styles */
 	.fm-header-black {	
@@ -160,6 +162,9 @@ p {
 		background-color: rgb(122,122,122,.7);
 		padding:10px 20px 20px 10px;
 		margin-top:20px;
+	}
+	.feature-text .details .mvp {
+		margin-top:150px;
 	}
 
 	.feature-text h1 {
@@ -346,6 +351,27 @@ p {
 
 /* CALCULATOR STYLES */
 
+.fm-form {
+	padding-bottom:30px;
+}
+
+	.fm-form label {
+		color: #7a7a7a;
+		display: block;
+		font-family: "museo-sans",sans-serif;
+		font-size: 16px;
+		line-height: 1.2rem;
+		margin: 20px 0 5px 0;
+		text-transform: capitalize;
+	}
+
+	.fm-form select, .fm-form input {
+		width:50%;
+		height:25px;
+}
+
+	
+
 .fm-calc-results section {
 	border:solid thin #797979;
 	font-family: "museo-slab",serif;
@@ -397,10 +423,10 @@ p {
 		padding-right:2rem;
 	}
 
-.fm-calc-results td {
-		text-align: right;
-		padding: 10px;
-	}
+	.fm-calc-results td {
+			text-align: right;
+			padding: 10px;
+		}
 
 	.fm-calc-results td::first-letter {
 		color: #5CB446;
@@ -527,6 +553,11 @@ button {
   text-decoration: none;
 }
 
+.block {
+	display: block;
+	margin-top:20px;
+}
+
 
 /*--HEADINGS--*/
 
@@ -543,7 +574,7 @@ button {
 }
 
 
-.detailed-analysis h3{
+.detailed-analysis h3 {
 	font-family: "museo-sans",sans-serif;
 	font-weight: 700;
 	color: #5CB447;
@@ -551,7 +582,7 @@ button {
 	line-height: 1.2em;
 }
 
-.submission-lists p{
+.submission-lists p {
 	font-family: "museo-sans",sans-serif;
 	font-size: 16px;
 	text-transform: capitalize;

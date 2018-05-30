@@ -15,54 +15,55 @@
 <!-- Start Header Include -->
 <!--#include virtual="includes/fleet-maven-header.html"-->
 <!-- End Header Incliude -->
-	<form><!-- form includes everything -->
 	<!--section 1-->
-	<section class="grid-100 grid-parent black">
+	<section class="grid-100 grid-parent">
 		<!--collect user information-->
-		
-		<!-- Vehicle Type Select Box-->
-		<label for="vehicleType">Select Vehicle Type</label>
-		<select id="vehicleType" name="vehicleType">
-			<option value="car">Sedan / Wagon</option>
-			<option value="truck">Truck</option>
-			<option value="suv">SUV</option>
-			<option value="van">Van</option>
-			<option value="stepVan">Step Van</option>
-			<option value="cabChassis">Cab &amp; Chassis</option>
-		</select>
-		
-		<!-- Depreciation Type -->
-		<label for="depType">Select Depreciation Type</label>
-		<select id="depType" name="depType">
-			<option value="mileageDep">Depreciation by Mileage</option>
-			<option value="yearDep">Depreciation by Year</option>
-		</select>
-				
-		<!-- Average Yearly Mileage Entry-->
-		<!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
-		<label for="aveMileage">Enter Average Yearly Mileage</label>
-		<input id="aveMileage" name="aveMileage" type="number">
-	
-		<!-- Depreciation Interval Select Box-->
-		<!-- TODO: Show this only if user selects Depreciation by year in depType -->
-		<label for="depInt">Select Replacement Cycle</label>
-		<select id="depInt" name="depInt">
-			<option value="" selected disabled hidden>Select Depreciation Interval</option>
-			<option value=1>1 year replacement cycle</option>
-			<option value=2>2 year replacement cycle</option>
-			<option value=3>3 year replacement cycle</option>
-			<option value=4>4 year replacement cycle</option>
-			<option value=5>5 year replacement cycle</option>
-			<option value=6>6 year replacement cycle</option>
-			<option value=7>7 year replacement cycle</option>
-		</select>
-		
-		<!--TODO: Zip Code-->
-		<label name="zipCode">Enter Zip Code</label>
-		<input id="zipCode" name="zipCode" type="text" pattern="[0-9]{5}" title="Five digit zip code"/>
-		
-		<button class="medium orange-button" id="calcButton" type="submit">Calculate!</button>
-		
+		<form class="fm-form grid-50 black" id="mvp-user-entry">
+
+			<!-- Vehicle Type Select Box-->
+			<label for="vehicleType">Select Vehicle Type</label>
+			<select id="vehicleType" name="vehicleType">
+				<option value="car">Sedan / Wagon</option>
+				<option value="truck">Truck</option>
+				<option value="suv">SUV</option>
+				<option value="van">Van</option>
+				<option value="stepVan">Step Van</option>
+				<option value="cabChassis">Cab &amp; Chassis</option>
+			</select>
+
+			<!-- Depreciation Type -->
+			<label for="depType">Select Depreciation Type</label>
+			<select id="depType" name="depType">
+				<option value="yearDep">Depreciation by Year</option>
+				<option value="mileageDep">Depreciation by Mileage</option>
+			</select>
+
+			<!-- Average Yearly Mileage Entry-->
+			<!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
+			<label for="aveMileage">Enter Average Yearly Mileage</label>
+			<input id="aveMileage" name="aveMileage" type="number" placeholder="11,000" required>
+
+			<!-- Depreciation Interval Select Box-->
+			<!-- TODO: Show this only if user selects Depreciation by year in depType -->
+			<label for="depInt">Select Replacement Cycle</label>
+			<select id="depInt" name="depInt">
+				<option value=1>1 year replacement cycle</option>
+				<option value=2>2 year replacement cycle</option>
+				<option value=3>3 year replacement cycle</option>
+				<option value=4>4 year replacement cycle</option>
+				<option value=5 selected>5 year replacement cycle</option>
+				<option value=6>6 year replacement cycle</option>
+				<option value=7>7 year replacement cycle</option>
+			</select>
+
+			<!-- Zip Code -->
+			<label name="zipCode">Enter Zip Code</label>
+			<input id="zipCode" name="zipCode" type="text" placeholder="81328" pattern="[0-9]{5}" title="Five digit zip code" required/>
+			
+			<!-- TODO: ADD FIRST, LAST NAME, BUSINESS NAME, EMAIL -->
+
+			<button class="medium orange-button block" id="calcButton" type="submit">Calculate!</button>
+		</form>
 		<!--return comparison summary (nav)-->
 	</section>
 		
@@ -99,20 +100,19 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
 								<tr class="sub">
-								  <!--<th scope="row">Based on MFG Range Estimate / Based on Customized Range Estimate</th>
-								  <td>$0.00</td>-->
-								  <th scope="row">Year 1 Average Fuel / Gal:</th>
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 1 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr class="sub">
 									<th scope="row" colspan="2">Cost Based on: 
-										<select name="fuelBasis">
-											<option value="manufacturer">Manufacturer Rating</option>
-											<option value="rangeAnalysis">Custom Range Analysis</option>
+										<select id="fuelBasis" name="fuelBasis">
+											<option value="manuEco">Manufacturer Rating</option>
+											<option value="rangeEco">Custom Range Analysis</option>
 										</select>
 									</th>
 								<tr>
@@ -153,15 +153,12 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								<tr class="sub">
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 2 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr>
@@ -202,15 +199,12 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								<tr class="sub">
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 3 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr>
@@ -251,15 +245,12 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								<tr class="sub">
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 4 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr>
@@ -300,15 +291,12 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								<tr class="sub">
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 5 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr>
@@ -349,15 +337,12 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								<tr class="sub">
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 6 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr>
@@ -398,15 +383,12 @@
 							<table>
 							  <tbody>
 								<tr>
-								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
+								  <th scope="row">Fuel Cost: </th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
+								<tr class="sub">
+								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+								  <th scope="row">Year 7 Average Fuel / Unit:</th>
 								  <td>$0.00</td>
 								</tr>
 								<tr>
@@ -468,40 +450,6 @@
 					</table>
 				</section>
 				
-				<!-- Estimated Average Fuel Price in the future -->
-				<section class="fuel-averages grid-100 black">
-					<h3>Estimated Average Fuel Prices</h3>
-					<table>
-					  <tbody>
-						<tr>
-						</tr>
-						<tr class="year-2">
-						  <th scope="row">Year 2:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-3">
-						  <th scope="row">Year 3:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-4">
-						  <th scope="row">Year 4:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-5">
-						  <th scope="row">Year 5:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-6">
-						  <th scope="row">Year 6:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-7">
-						  <th scope="row">Year 7:</th>
-						  <td>$0.00</td>
-						</tr>
-					  </tbody>
-					</table>
-				</section>
 				<!-- Estimated Total Vehicle Costs Box -->
 				<section class="vehicle-total grid-100 black">
 					<h3>Estimated Total Vehicle Costs</h3>
@@ -572,7 +520,6 @@
 		<section></section>
 	
 	</main>
-	</form>
 <!-- Start Footer Include -->
 <!--#include virtual="includes/fleet-maven-footer.html"-->
 <!-- End Footer Include -->

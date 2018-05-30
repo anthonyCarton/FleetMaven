@@ -34,30 +34,61 @@ $(function() {
 
 	
 	
+	// TODO: function setAveMileage(){ provide a different aveMileage based on vehicleType}
+	// TODO: Object {"car":11244, truck...
+	
 	// DECLARE INTERFACE VARIABLES & EVENT LISTENERS
 	
-	// Vehicle Type				 		( "#vehicleType" )
-	let vehicleType;
-	$( "#vehicleType" ).change(function () {
+	let vehicleType = "car";
+	let depType = "yearDep";
+	let aveMileage = 11124;
+	let depInt = 5;
+	let zipCode = "81328";
+	
+	// hideYears() outside of the default Depreciation Interval at outset
+	hideYears();
+	
+	
+	// Collect user input
+	$( "#mvp-user-entry" ).submit(function (event) {
+		// Vehicle Type
 		vehicleType = $( "#vehicleType" ).val();
-	});
-	
-	// Depreciation Type				( "#depType" )
-	let depType;
-	$( "#depType" ).change(function (){
+		
+		// Depreciation Type
 		depType = $( "#depType" ).val();
-	});
-	
-	// Average Yearly Mileage			( "#aveMileage" )	
-	let aveMileage;
-	$( "#aveMileage" ).change(function (){
+		
+		// Average Yearly Mileage
 		aveMileage = $( "#aveMileage" ).val();
-	});
-	
-	// Depreciation Interval			( "#depInt" )
-	let depInt;
-	$("#depInt").change(function() {
+		
+		// Depreciation Interval
 		depInt = $("#depInt").val();
+		hideYears();
+		
+		// Zip Code
+		zipCode = $( "#zipCode" ).val();
+		// TODO: If (zipCode is in CO (80001–81658)) {use local fuelAvg's} else {use natAvg's}
+
+
+		// Log Variables so I can see if this works
+		console.log(
+			`fire! 
+			vehicleType = ${vehicleType} 
+			depType = ${depType}
+			aveMileage = ${aveMileage}
+			depInt = ${depInt}
+			zipCode = ${zipCode}
+
+		`);
+		
+		event.preventDefault();
+		
+		hideYears();
+		
+	});
+		
+	
+	// Hides years outside of Depreciation Interval
+	function hideYears() {
 		// remove all previous .hide-years classes
 		$( ".hide-years" ).removeClass( "hide-years" );
 		// Hide-years greater than depInt
@@ -66,18 +97,23 @@ $(function() {
 		for (let i = x; i <= 7; i++) {
 			$( ".year-" + i ).addClass( "hide-years" );
 		}
-	});
+	}
+
 	
-	// Zip Code							( "#zipCode" )
-	let zipCode;
-	$( "#zipCode" ).change(function() {
-    	zipCode = $( "#zipCode" ).val();
-	});
 
 	// Fuel Grade						( "#fuelGrade" )
+	// Leaving this one out of #mvp-user-entry b/c it's not part of that form.
 	let fuelGrade;
-	$("#fuelGrade").change(function() {
+	$( "#fuelGrade" ).change(function() {
 		fuelGrade = $("#fuelGrade").val();
+	});
+	
+	// Fuel Basis
+	let fuelBasis = "manuEco";
+	$( "#fuelBasis" ).change(function() {
+		fuelBasis = $( "#fuelBasis" ).val();
+		// expects manuEco or rangeEco
+		console.log(fuelBasis);
 	});
 
 	// Fuel Type						( "#fuelType" )
@@ -141,7 +177,7 @@ $(function() {
 	console.log(thisYear);
 	console.log(lastYear);
 
-  // NOW THAT I KNOW WHAT YEAR IT IS, I WANT TO MAKE THE CALLS SPECIFIC TO THE YEAR.
+  // TODO: NOW THAT I KNOW WHAT YEAR IT IS, I WANT TO MAKE THE CALLS SPECIFIC TO THE YEAR.
 	
 
 

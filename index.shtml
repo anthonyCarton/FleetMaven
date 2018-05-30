@@ -33,13 +33,13 @@
 					<span class="tag">See the most up-to-date financial incentives for your fleet purchase!</span>
 				</h1>
 				<div class="push-25 tablet-push-10 grid-20 tablet-grid-25">
-					<div class="details">
-						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
-						<button class="medium orange-button">Compare now</button>
-					</div>
-					<div class="details">
+					<div class="details not-mvp">
 						<p>Are alternative fuel vehicles a cost-effective option for your business?</p>
 						<button class="medium green-button">Learn more</button>
+					</div>
+					<div class="details mvp">
+						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
+						<button class="medium orange-button">Compare now</button>
 					</div>
 				</div>
 			</div>
@@ -59,13 +59,13 @@
 					<span class="tag">Get customized range answers based on the terrain and speed limits in your area!</span>
 				</h1>
 				<div class="push-25 tablet-push-10 grid-20 tablet-grid-25">
-					<div class="details">
-						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
-						<button class="medium orange-button">Compare now</button>
-					</div>
-					<div class="details">
+					<div class="details not-mvp">
 						<p>Are alternative fuel vehicles a cost-effective option for your business?</p>
 						<button class="medium green-button">Learn more</button>
+					</div>
+					<div class="details mvp">
+						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
+						<button class="medium orange-button">Compare now</button>
 					</div>
 				</div>
 			</div>
@@ -85,13 +85,13 @@
 					<span class="tag">Our powerful cost-benefit analytics deliver precision insights to improve your bottom-line.</span>
 				</h1>
 				<div class="push-25 tablet-push-10 grid-20 tablet-grid-25">
-					<div class="details">
-						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
-						<button class="medium orange-button">Compare now</button>
-					</div>
-					<div class="details">
+					<div class="details not-mvp">
 						<p>Are alternative fuel vehicles a cost-effective option for your business?</p>
 						<button class="medium green-button">Learn more</button>
+					</div>
+					<div class="details mvp">
+						<p>Use our calculator to compare the lifetime costs of your next fleet vehicle.</p>
+						<button class="medium orange-button">Compare now</button>
 					</div>
 				</div>
 			</div>
@@ -99,12 +99,13 @@
 	
 	</section>
 	<section class="grid-100 grid-parent">
-		<section class="grid-66 tablet-grid-100 grid-parent">	
+		<!-- TODO: set back to grid-66 after MVP-->
+		<section class="grid-100 tablet-grid-100 grid-parent">
 			
 			<!--top card row across-->
 			
 			<!--COMPARE CARD 1-->
-			<div class="grid-45 tablet-grid-45 fm-card">
+			<div class="grid-30 tablet-grid-45 fm-card">
 				<figure class="pattern-2">
 					<img src="assets/fm-card-01-450px.jpg">
 					<figcaption>
@@ -120,7 +121,7 @@
 			</div>
 			
 			<!--LIFETIME CARD 2-->
-			<div class="push-5 tablet-push-5 grid-45 tablet-grid-45 fm-card">	
+			<div class="push-5 grid-30 tablet-push-5 tablet-grid-45 fm-card">	
 				<figure class="pattern-3">
 					<img src="assets/fm-card-02-450px.jpg">
 					<figcaption>
@@ -137,15 +138,10 @@
 				<img src="" alt=""/>
 				<a href="calculator.shtml"><button class="green-button medium">GET ESTIMATE</button></a>
 			
-			</div>
-			
-			<div class="clear"></div>
-			
-			
-			<!--middle card row across-->
-			
+			</div>			
+						
 			<!--RANGE CALCULATION CARD 3-->
-			<div class="grid-45 tablet-grid-45 fm-card">
+			<div class="push-10 grid-30 tablet-grid-45 fm-card">
 				<figure class="pattern-1">
 					<img src="assets/fm-card-03-450px.jpg">
 					<figcaption>
@@ -161,7 +157,7 @@
 			</div>
 			
 			<!--MAPS CARD 4-->
-			<div class="push-5 tablet-push-5 grid-45 tablet-grid-45 fm-card">
+			<div class="grid-30 tablet-push-5 tablet-grid-45 fm-card">
 				<figure class="pattern-2">
 					<img src="assets/fm-card-04-450px.jpg">
 					<figcaption>
@@ -173,15 +169,12 @@
 				<h3>No h3 copy currently</h3>
 				<p>No paragraph copy currently.</p>
 				<a href=""><button class="green-button medium">LEARN MORE</button></a>
-			</div>
-			
-			<div class="clear"></div>
-			
+			</div>			
 			
 			<!--bottom card row across-->
 			
 			<!--TECHNOLOGY CARD 5-->
-			<div class="grid-45 tablet-grid-45 fm-card">
+			<div class="push-5 grid-30 tablet-grid-45 fm-card">
 				<figure class="pattern-3">
 					<img src="assets/fm-card-05-450px.jpg">
 					<figcaption>
@@ -196,7 +189,7 @@
 			</div>
 			
 			<!--COLORADO CARD 6-->
-			<div class="push-5 tablet-push-5 grid-45 tablet-grid-45 fm-card">
+			<div class="push-10 grid-30 tablet-push-5 tablet-grid-45 fm-card">
 				<figure class="pattern-1">
 					<img src="assets/fm-card-06-450px.jpg">
 					<figcaption>
@@ -213,7 +206,7 @@
 			<!--end of feature cards 1-6-->
 			
 		</section>
-		<aside class="grid-33">
+		<aside class="grid-33 not-mvp">
 			<section class="fm-login black">.fm-login</section>
 			<section class="fm-home-memopt black">.fm-home-memopt</section>
 		</aside>
