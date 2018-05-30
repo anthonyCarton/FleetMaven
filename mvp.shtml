@@ -41,7 +41,7 @@
 			<!-- Average Yearly Mileage Entry-->
 			<!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
 			<label for="aveMileage">Enter Average Yearly Mileage</label>
-			<input id="aveMileage" name="aveMileage" type="number" placeholder="11,000" required>
+			<input id="aveMileage" name="aveMileage" type="number" value="11244" required>
 
 			<!-- Depreciation Interval Select Box-->
 			<!-- TODO: Show this only if user selects Depreciation by year in depType -->

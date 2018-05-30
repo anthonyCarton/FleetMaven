@@ -8,46 +8,55 @@ $(function() {
 
 	// DECLARE GLOBAL CONSTANTS
 	// escalation rates from: afdc.energy.gov/calc/cost_calculator_methodology.html#sources
-  const escGas = 0.018;
-  const escE85 = 0.016;
-  const escCng = 0.003;
-  const escLpg = 0.013;
-  const escDie = 0.018;
-  const escB20 = 0.018;
-  const escB10 = 0.018;
-  const escEle = -0.003; // electricty has negative escalation rate
+	const escGas = 0.018;
+	const escE85 = 0.016;
+	const escCng = 0.003;
+	const escLpg = 0.013;
+	const escDie = 0.018;
+	const escB20 = 0.018;
+	const escB10 = 0.018;
+	const escEle = -0.003; // electricty has negative escalation rate
 
 
 
 	// DECLARE AVERAGE VARIABLES
 	let gasAve = {"Y0":1}; 		// GETs Gas Average from data.colorado.gov/Energy/Gasoline-Prices-in-Colorado/8pk9-mh2i
-  let cngAve = {"Y0":1}; 		// GETs CNG Average from data.colorado.gov/Energy/Natural-Gas-Prices-in-Colorado/e4ky-6g2n
-  let eleComAve = {"Y0":1};
-  let eleResAve = {"Y0":1}; 	// GETs Comercial and Residential Electricity Averages from data.colorado.gov/Business/Electricity-Revenue-in-Colorado/q6sk-tjm9
-
-  // E85, LPG, Diesel, B20, B100 Averages from afdc.energy.gov/fuels/prices.html (no GET)
-  let e85Ave = {"Y0": 2.68};
-  let lpgAve = {"Y0": 3.86};
-  let dieAve = {"Y0": 2.37};
-  let b20Ave = {"Y0": 2.37};
-  let b10Ave = {"Y0": 2.37};
+	let cngAve = {"Y0":1}; 		// GETs CNG Average from data.colorado.gov/Energy/Natural-Gas-Prices-in-Colorado/e4ky-6g2n
+	let eleComAve = {"Y0":1};
+	let eleResAve = {"Y0":1}; 	// GETs Comercial and Residential Electricity Averages from data.colorado.gov/Business/Electricity-Revenue-in-Colorado/q6sk-tjm9
+	// E85, LPG, Diesel, B20, B100 Averages from afdc.energy.gov/fuels/prices.html (no GET)
+	let e85Ave = {"Y0": 2.68};
+	let lpgAve = {"Y0": 3.86};
+	let dieAve = {"Y0": 2.37};
+	let b20Ave = {"Y0": 2.37};
+	let b10Ave = {"Y0": 2.37};
 
 	
 	
 	// TODO: function setAveMileage(){ provide a different aveMileage based on vehicleType}
-	// TODO: Object {"car":11244, truck...
+	
+	// Fleet mileageAvg's by vehicleType
+	const mileageAvg = {
+		  car : 11244,
+		  truck : 11712,
+		  suv : 11346,
+		  stepVan : 13116,
+		  cabChassis : 13116
+	};
+	
+	// console.log(mileageAvg.car);
+	
 	
 	// DECLARE INTERFACE VARIABLES & EVENT LISTENERS
 	
 	let vehicleType = "car";
 	let depType = "yearDep";
-	let aveMileage = 11124;
+	let aveMileage = 11124; // TODO: Does this need to change b/c the above mileageAve?
 	let depInt = 5;
 	let zipCode = "81328";
 	
 	// hideYears() outside of the default Depreciation Interval at outset
 	hideYears();
-	
 	
 	// Collect user input
 	$( "#mvp-user-entry" ).submit(function (event) {
@@ -85,7 +94,51 @@ $(function() {
 		hideYears();
 		
 	});
-		
+	
+	// Change Average Yearly Mileage based on Vehicle Type
+	$( "#vehicleType" ).change(function (){
+		vehicleType = $( "#vehicleType" ).val();  
+
+	  function mileageSetter(vehicleType){
+		const mileageAvg = {
+		  car: 11244,
+		  truck: 11712,
+		  suv: 11346,
+		  stepVan: 13116,
+		  cabChassis: 13116
+		};
+
+		console.log(`vehicleType is now ${vehicleType}`);
+
+		switch (vehicleType) {
+			case "car":
+		  $("#aveMileage").val(mileageAvg.car);
+		  break;
+
+			case "truck":
+		  $("#aveMileage").val(mileageAvg.truck);
+		  break;
+
+			case "suv":
+		  $("#aveMileage").val(mileageAvg.suv);
+		  break;
+
+			case "van":
+		  $("#aveMileage").val(mileageAvg.van);
+		  break;
+
+			case "stepVan":
+		  $("#aveMileage").val(mileageAvg.stepVan);
+		  break;
+
+			case "cabChassis":
+		  $("#aveMileage").val(mileageAvg.cabChassis);
+		  break;
+
+		}
+	  }
+	  mileageSetter(vehicleType);
+	});		
 	
 	// Hides years outside of Depreciation Interval
 	function hideYears() {
