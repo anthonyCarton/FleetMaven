@@ -10,18 +10,58 @@
 
 </head>
 <body>
+
 <div class="grid-container">
 <!-- Start Header Include -->
 <!--#include virtual="includes/fleet-maven-header.html"-->
 <!-- End Header Incliude -->
-	
+	<form><!-- form includes everything -->
 	<!--section 1-->
 	<section class="grid-100 grid-parent black">
 		<!--collect user information-->
-		TODO: Vehicle Type Select Box
-		TODO: Average Yearly Mileage Entry
-		TODO: Depreciation Interval Select Box
-		TODO: Zip Code
+		
+		<!-- Vehicle Type Select Box-->
+		<label for="vehicleType">Select Vehicle Type</label>
+		<select id="vehicleType" name="vehicleType">
+			<option value="car">Sedan / Wagon</option>
+			<option value="truck">Truck</option>
+			<option value="suv">SUV</option>
+			<option value="van">Van</option>
+			<option value="stepVan">Step Van</option>
+			<option value="cabChassis">Cab &amp; Chassis</option>
+		</select>
+		
+		<!-- Depreciation Type -->
+		<label for="depType">Select Depreciation Type</label>
+		<select id="depType" name="depType">
+			<option value="mileageDep">Depreciation by Mileage</option>
+			<option value="yearDep">Depreciation by Year</option>
+		</select>
+				
+		<!-- Average Yearly Mileage Entry-->
+		<!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
+		<label for="aveMileage">Enter Average Yearly Mileage</label>
+		<input id="aveMileage" name="aveMileage" type="number">
+	
+		<!-- Depreciation Interval Select Box-->
+		<!-- TODO: Show this only if user selects Depreciation by year in depType -->
+		<label for="depInt">Select Replacement Cycle</label>
+		<select id="depInt" name="depInt">
+			<option value="" selected disabled hidden>Select Depreciation Interval</option>
+			<option value=1>1 year replacement cycle</option>
+			<option value=2>2 year replacement cycle</option>
+			<option value=3>3 year replacement cycle</option>
+			<option value=4>4 year replacement cycle</option>
+			<option value=5>5 year replacement cycle</option>
+			<option value=6>6 year replacement cycle</option>
+			<option value=7>7 year replacement cycle</option>
+		</select>
+		
+		<!--TODO: Zip Code-->
+		<label name="zipCode">Enter Zip Code</label>
+		<input id="zipCode" name="zipCode" type="text" pattern="[0-9]{5}" title="Five digit zip code"/>
+		
+		<button class="medium orange-button" id="calcButton" type="submit">Calculate!</button>
 		
 		<!--return comparison summary (nav)-->
 	</section>
@@ -62,14 +102,19 @@
 								  <th scope="row">Fuel Cost: </th><!-- TODO: add select box for MFG Range vs. Custom Range -->
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on MFG Range Estimate</th>
+								<tr class="sub">
+								  <!--<th scope="row">Based on MFG Range Estimate / Based on Customized Range Estimate</th>
+								  <td>$0.00</td>-->
+								  <th scope="row">Year 1 Average Fuel / Gal:</th>
 								  <td>$0.00</td>
 								</tr>
-								<tr>
-								  <th scope="row" class="sub">Based on Customized Range Estimate</th>
-								  <td>$0.00</td>
-								</tr>
+								<tr class="sub">
+									<th scope="row" colspan="2">Cost Based on: 
+										<select name="fuelBasis">
+											<option value="manufacturer">Manufacturer Rating</option>
+											<option value="rangeAnalysis">Custom Range Analysis</option>
+										</select>
+									</th>
 								<tr>
 								  <th scope="row">Depreciation</th>
 								  <td>$0.00</td>
@@ -429,31 +474,29 @@
 					<table>
 					  <tbody>
 						<tr>
-						  <th scope="row" class="year-1">Year 1:</th>
+						</tr>
+						<tr class="year-2">
+						  <th scope="row">Year 2:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-2">Year 2:</th>
+						<tr class="year-3">
+						  <th scope="row">Year 3:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-3">Year 3:</th>
+						<tr class="year-4">
+						  <th scope="row">Year 4:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-4">Year 4:</th>
+						<tr class="year-5">
+						  <th scope="row">Year 5:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-5">Year 5:</th>
+						<tr class="year-6">
+						  <th scope="row">Year 6:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-6">Year 6:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr>
-						  <th scope="row" class="year-7">Year 7:</th>
+						<tr class="year-7">
+						  <th scope="row">Year 7:</th>
 						  <td>$0.00</td>
 						</tr>
 					  </tbody>
@@ -468,32 +511,32 @@
 						  <th scope="row">Vehicle Purchase Cost</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr class="">
-						  <th scope="row" class="year-1">Year 1 Operating Cost:</th>
+						<tr class="year-1">
+						  <th scope="row" >Year 1 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-2">Year 2 Operating Cost:</th>
+						<tr class="year-2">
+						  <th scope="row">Year 2 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-3">Year 3 Operating Cost:</th>
+						<tr class="year-3">
+						  <th scope="row">Year 3 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-4">Year 4 Operating Cost:</th>
+						<tr class="year-4">
+						  <th scope="row">Year 4 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-5">Year 5 Operating Cost:</th>
+						<tr class="year-5">
+						  <th scope="row">Year 5 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-6">Year 6 Operating Cost:</th>
+						<tr class="year-6">
+						  <th scope="row">Year 6 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
-						<tr>
-						  <th scope="row" class="year-7">Year 7 Operating Cost:</th>
+						<tr class="year-7">
+						  <th scope="row">Year 7 Operating Cost:</th>
 						  <td>$0.00</td>
 						</tr>
 					  </tbody>
@@ -529,12 +572,12 @@
 		<section></section>
 	
 	</main>
-	
+	</form>
 <!-- Start Footer Include -->
 <!--#include virtual="includes/fleet-maven-footer.html"-->
 <!-- End Footer Include -->
 </div>
 <!-- FleetMacen JavaScript -->
-<script src="../js/fm-script-r1.js"></script>
+<script src="js/fm-script-r1.js"></script>
 </body>
 </html>

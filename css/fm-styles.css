@@ -33,6 +33,10 @@
 .grid-container {
 }
 
+.hide-years {
+	display: none;
+}
+
 /* GENERAL TEXT STYLES FIRST */
 h1 {
 	font-family: "museo-sans",sans-serif;
@@ -383,12 +387,17 @@ p {
 
 	}
 
-	.fm-calc-results .sub {
+	.fm-calc-results .sub th {
 		color: #ADADAD;
 		padding-left:2rem;
 	}
 
-	.fm-calc-results td {
+	.fm-calc-results .sub td {
+		color: #ADADAD;
+		padding-right:2rem;
+	}
+
+.fm-calc-results td {
 		text-align: right;
 		padding: 10px;
 	}
