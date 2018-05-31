@@ -69,6 +69,7 @@ p {
 	font-size: 14px;
 	line-height: 1.2em;
 	color: #7a7a7a;
+	max-width: 450px;
 }
 
 
@@ -372,13 +373,13 @@ p {
 
 	
 
-.fm-calc-results section {
+.fm-calc-results section{
 	border:solid thin #797979;
 	font-family: "museo-slab",serif;
 
 }
 
-	.fm-calc-results section  h3 {
+	.fm-calc-results section h3 {
 		font-weight: 500;
 		color: #7A7A7A;
 		font-size: 1.5rem;

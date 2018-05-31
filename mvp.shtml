@@ -17,7 +17,8 @@
 <!-- End Header Incliude -->
 	<!--section 1-->
 	<section class="grid-100 grid-parent">
-		<!--collect user information-->
+		<h1>Fleet Vehicle Cost / Benefit Analysis</h1>
+		<p>Wondering if an alternative fuel vehicle will save your business money? Use this tool to compare the conventional vehicle you were considering against a similar alternative fuel vehicle and find out!</p>		<!--collect user information-->
 		<form class="fm-form grid-50 black" id="mvp-user-entry">
 
 			<!-- Vehicle Type Select Box-->
@@ -64,7 +65,41 @@
 
 			<button class="medium orange-button block" id="calcButton" type="submit">Calculate!</button>
 		</form>
+		
 		<!--return comparison summary (nav)-->
+		<nav class="grid-50 black" id="mvp-vehicle-select">
+			<section class="grid-100 black">
+				<h3>Select Conventional Vehicle Option</h3>
+				
+				<!-- Select Model Year, just last 5 years -->
+				<select id="convVehicleYear" name="convVehicleYear">
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+				</select>
+				
+				<!-- Select Vehicle Make -->
+				<select id="convVehicleMake" name="convVehicleMake">
+					<!-- I'm guessing this autofills?-->
+				</select>
+				
+				<!-- Select Vehicle Model -->
+				<select id="convVehicleModel" name="convVehicleModel">
+					<!-- I'm guessing this autofills?-->
+				</select>
+				
+				<!-- Select Vehicle Trim Level -->
+				<select id="convVehicleOptions" name="convVehicleOptions">
+					<!-- I'm guessing this autofills?-->
+				</select>
+				
+			</section>
+			<section class="grid-100 black">
+				<h3>Select Alternative Vehicle for Comparison</h3>
+			</section>
+		</nav>
 	</section>
 		
 	<!--main content/results-->
@@ -75,7 +110,7 @@
 			<!--best vehicle option header 					(100%)	-->
 			<h2>Best Vehicle Option</h2>
 			<!--Vehicle Information box 					(100%)	-->
-			<section class="vehicle-info grid-100 black">
+			<section class="vehicle-info grid-100">
 				<h3>Vehicle Information</h3>
 				<!-- List information like make model etc. -->
 			</section>
@@ -83,7 +118,7 @@
 			<!-- Column 									(50%)	-->
 			<div class="col grid-50 grid-parent">
 				<!--Vehicle Operating Costs Estimate Box-->
-				<section class="grid-100 black">
+				<section class="grid-100">
 					<h3>Vehicle Operating Costs Estimate</h3>
 					
 					<!-- Year 1 Operating Costs Estimate -->
