@@ -10,528 +10,531 @@
 
 </head>
 <body>
-
-<div class="grid-container">
-<!-- Start Header Include -->
-<!--#include virtual="includes/fleet-maven-header.html"-->
-<!-- End Header Incliude -->
-	<!--section 1-->
-	<section class="grid-100 grid-parent">
-		<h1>Fleet Vehicle Cost / Benefit Analysis</h1>
-		<p>Wondering if an alternative fuel vehicle will save your business money? Use this tool to compare the conventional vehicle you were considering against a similar alternative fuel vehicle and find out!</p>		<!--collect user information-->
-		<form class="fm-form grid-50 black" id="mvp-user-entry">
-
-			<!-- Vehicle Type Select Box-->
-			<label for="vehicleType">Select Vehicle Type</label>
-			<select id="vehicleType" name="vehicleType">
-				<option value="car">Sedan / Wagon</option>
-				<option value="truck">Truck</option>
-				<option value="suv">SUV</option>
-				<option value="van">Van</option>
-				<option value="stepVan">Step Van</option>
-				<option value="cabChassis">Cab &amp; Chassis</option>
-			</select>
-
-			<!-- Depreciation Type -->
-			<label for="depType">Select Depreciation Type</label>
-			<select id="depType" name="depType">
-				<option value="yearDep">Depreciation by Year</option>
-				<option value="mileageDep">Depreciation by Mileage</option>
-			</select>
-
-			<!-- Average Yearly Mileage Entry-->
-			<!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
-			<label for="aveMileage">Enter Average Yearly Mileage</label>
-			<input id="aveMileage" name="aveMileage" type="number" value="11244" required>
-
-			<!-- Depreciation Interval Select Box-->
-			<!-- TODO: Show this only if user selects Depreciation by year in depType -->
-			<label for="depInt">Select Replacement Cycle</label>
-			<select id="depInt" name="depInt">
-				<option value=1>1 year replacement cycle</option>
-				<option value=2>2 year replacement cycle</option>
-				<option value=3>3 year replacement cycle</option>
-				<option value=4>4 year replacement cycle</option>
-				<option value=5 selected>5 year replacement cycle</option>
-				<option value=6>6 year replacement cycle</option>
-				<option value=7>7 year replacement cycle</option>
-			</select>
-
-			<!-- Zip Code -->
-			<label name="zipCode">Enter Zip Code</label>
-			<input id="zipCode" name="zipCode" type="text" placeholder="81328" pattern="[0-9]{5}" title="Five digit zip code" required/>
-			
-			<!-- TODO: ADD FIRST, LAST NAME, BUSINESS NAME, EMAIL -->
-
-			<button class="medium orange-button block" id="calcButton" type="submit">Calculate!</button>
-		</form>
-		
-		<!--return comparison summary (nav)-->
-		<nav class="grid-50 black" id="mvp-vehicle-select">
-			<section class="grid-100 black">
-				<h3>Select Conventional Vehicle Option</h3>
-				
-				<!-- Select Model Year, just last 5 years -->
-				<select id="convVehicleYear" name="convVehicleYear">
-					<option value="2019">2019</option>
-					<option value="2018">2018</option>
-					<option value="2017">2017</option>
-					<option value="2016">2016</option>
-					<option value="2015">2015</option>
-				</select>
-				
-				<!-- Select Vehicle Make -->
-				<select id="convVehicleMake" name="convVehicleMake">
-					<!-- I'm guessing this autofills?-->
-				</select>
-				
-				<!-- Select Vehicle Model -->
-				<select id="convVehicleModel" name="convVehicleModel">
-					<!-- I'm guessing this autofills?-->
-				</select>
-				
-				<!-- Select Vehicle Trim Level -->
-				<select id="convVehicleOptions" name="convVehicleOptions">
-					<!-- I'm guessing this autofills?-->
-				</select>
-				
-			</section>
-			<section class="grid-100 black">
-				<h3>Select Alternative Vehicle for Comparison</h3>
-			</section>
-		</nav>
-	</section>
-		
-	<!--main content/results-->
-	<main class="grid-100 grid-parent">
-	
-		<!--section: Best Option-->
-		<section class="fm-calc-results grid-100 grid-parent">
-			<!--best vehicle option header 					(100%)	-->
-			<h2>Best Vehicle Option</h2>
-			<!--Vehicle Information box 					(100%)	-->
-			<section class="vehicle-info grid-100">
-				<h3>Vehicle Information</h3>
-				<!-- List information like make model etc. -->
-			</section>
-
-			<!-- Column 									(50%)	-->
-			<div class="col grid-50 grid-parent">
-				<!--Vehicle Operating Costs Estimate Box-->
-				<section class="grid-100">
-					<h3>Vehicle Operating Costs Estimate</h3>
-					
-					<!-- Year 1 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-1">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 1 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 1 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-									<th scope="row" colspan="2">Cost Based on: 
-										<select id="fuelBasis" name="fuelBasis">
-											<option value="manuEco">Manufacturer Rating</option>
-											<option value="rangeEco">Custom Range Analysis</option>
-										</select>
-									</th>
-								<tr>
-								  <th scope="row">Depreciation: 20% first year</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: 6% / year</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-
-					<!-- Year 2 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-2">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 2 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 2 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: 6% / year</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-
-					<!-- Year 3 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-3">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 3 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 3 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: 6% / year</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-
-					<!-- Year 4 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-4">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 4 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 4 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: 6% / year</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-
-					<!-- Year 5 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-5">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 5 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 5 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: 6% / year</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-
-					<!-- Year 6 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-6">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 6 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 6 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Depreciation: N/A after year 5</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: N/A after year 5</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-					
-					<!-- Year 7 Operating Costs Estimate -->
-					<div class="fm-vehicle-operate year-7">
-						<table>
-							<tbody>
-								<tr class="total">
-								  <th scope="row">Total Year 7 Operating Costs:</th>
-								  <td>$0.00</td>
-								</tr>
-							</tbody>
-						</table>
-						<details>
-							<table>
-							  <tbody>
-								<tr>
-								  <th scope="row">Fuel Cost: </th>
-								  <td>$0.00</td>
-								</tr>
-								<tr class="sub">
-								  <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
-								  <th scope="row">Year 7 Average Fuel / Unit:</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Depreciation: N/A after year 5</th>
-								  <td>$0.00</td>
-								</tr>
-								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-							  	<!-- TODO R2: Let user enter own insurance, registration -->
-								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
-								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
-								<tr>
-								  <!-- TODO R2: User can select interest rate -->
-								  <th scope="row">Financing and Interest: N/A after year 5</th>
-								  <td>$0.00</td>
-								</tr>
-							  </tbody>
-							</table>
-						</details>
-					</div>
-				</section>
-			</div>
-
-			
-						
-			<!-- Column 									(50%)	-->
-			<div class="col grid-50 grid-parent">
-				<!-- Vehicle Purchase Box -->
-				<section class="vehicle-purchase grid-100 black">
-					<h3>Vehicle Purchase Costs</h3>
-					<table>
-					  <tbody>
-						<tr>
-						  <th scope="row">MSRP:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr>
-						  <th scope="row">Initial Tax &amp; Licensing</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr>
-						  <th scope="row">Dealer Fees</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr>
-						  <th scope="row">Tax Rebates</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr>
-						  <th scope="row">Incentives</th>
-						  <td>$0.00</td>
-						</tr>
-					  </tbody>
-					</table>
-				</section>
-				
-				<!-- Estimated Total Vehicle Costs Box -->
-				<section class="vehicle-total grid-100 black">
-					<h3>Estimated Total Vehicle Costs</h3>
-					<table>
-					  <tbody>
-						<tr>
-						  <th scope="row">Vehicle Purchase Cost</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-1">
-						  <th scope="row" >Year 1 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-2">
-						  <th scope="row">Year 2 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-3">
-						  <th scope="row">Year 3 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-4">
-						  <th scope="row">Year 4 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-5">
-						  <th scope="row">Year 5 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-6">
-						  <th scope="row">Year 6 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-						<tr class="year-7">
-						  <th scope="row">Year 7 Operating Cost:</th>
-						  <td>$0.00</td>
-						</tr>
-					  </tbody>
-					</table>
-			
-				</section>
-			</div>	
-			
-
-			<!-- Refueling Map 	(only show for afvs?)		(100%)	-->
-			<section class="fm-fuel-map grid-100 black">
-				<h3>Alternative Fuel Vehicle Refueling Stations</h3>
-				<!-- Embed code from https://www.afdc.energy.gov/stations/#/find/nearest?show_embed=true-->
-				<div id="afdc-stations">
-					<div id="afdc-stations-loading">Loading alternative fueling station locator...</div>
-				</div>
-				<script type="text/javascript">window.afdcStationsOptions = {"country":"US","localeCountry":"US","path":"/find/nearest","query":{}}</script>
-				<script async defer src="https://widgets.nrel.gov/afdc/station-locator/assets/embed.js"></script>
-				<noscript>Please enable JavaScript to view the alternative fueling station locator.</noscript>
-			
-			</section>
-			
-			<!-- Range Analysis (only show for afvs?)		(100%)	-->
-			<section class="range-analysis grid-100 black">
-				<h3>Customized Range Analysis</h3>
-			
-			</section>
-			
-		</section>
-		
-		
-		<!--section : repeat above-->
-		<section></section>
-	
-	</main>
-<!-- Start Footer Include -->
-<!--#include virtual="includes/fleet-maven-footer.html"-->
-<!-- End Footer Include -->
+<div class="grid-container"> 
+  <!-- Start Header Include --> 
+  <!--#include virtual="includes/fleet-maven-header.html"--> 
+  <!-- End Header Incliude --> 
+  <!--section 1-->
+  <section class="grid-100 grid-parent">
+    <h1>Fleet Vehicle Cost / Benefit Analysis</h1>
+    <p>Wondering if an alternative fuel vehicle will save your business money? Use this tool to compare the conventional vehicle you were considering against a similar alternative fuel vehicle and find out!</p>
+    <!--collect user information-->
+    <form class="fm-form grid-50 black" id="mvp-user-entry">
+      
+      <!-- Vehicle Type Select Box-->
+      <label for="vehicleType">Select Vehicle Type</label>
+      <select id="vehicleType" name="vehicleType">
+        <option value="car">Sedan / Wagon</option>
+        <option value="truck">Truck</option>
+        <option value="suv">SUV</option>
+        <option value="van">Van</option>
+        <option value="stepVan">Step Van</option>
+        <option value="cabChassis">Cab &amp; Chassis</option>
+      </select>
+      
+      <!-- Depreciation Type -->
+      <label for="depType">Select Depreciation Type</label>
+      <select id="depType" name="depType">
+        <option value="yearDep">Depreciation by Year</option>
+        <option value="mileageDep">Depreciation by Mileage</option>
+      </select>
+      
+      <!-- Average Yearly Mileage Entry--> 
+      <!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
+      <label for="aveMileage">Enter Average Yearly Mileage</label>
+      <input id="aveMileage" name="aveMileage" type="number" value="11244" required>
+      
+      <!-- Depreciation Interval Select Box--> 
+      <!-- TODO: Show this only if user selects Depreciation by year in depType -->
+      <label for="depInt">Select Replacement Cycle</label>
+      <select id="depInt" name="depInt">
+        <option value=1>1 year replacement cycle</option>
+        <option value=2>2 year replacement cycle</option>
+        <option value=3>3 year replacement cycle</option>
+        <option value=4>4 year replacement cycle</option>
+        <option value=5 selected>5 year replacement cycle</option>
+        <option value=6>6 year replacement cycle</option>
+        <option value=7>7 year replacement cycle</option>
+      </select>
+      
+      <!-- Zip Code -->
+      <label name="zipCode">Enter Zip Code</label>
+      <input id="zipCode" name="zipCode" type="text" placeholder="81328" pattern="[0-9]{5}" title="Five digit zip code" required/>
+      
+      <!-- TODO: ADD FIRST, LAST NAME, BUSINESS NAME, EMAIL -->
+      
+      <button class="medium orange-button block" id="calcButton" type="submit">Calculate!</button>
+    </form>
+    
+    <!--return comparison summary (nav)-->
+    <nav class="grid-50 black" id="mvp-vehicle-select">
+      <section class="grid-100 black">
+        <h3>Select Conventional Vehicle Option</h3>
+        
+        <!-- Select Model Year, just last 5 years -->
+        <label for="convVehicleYear">#convVehicleYear</label>
+        <select id="convVehicleYear" name="convVehicleYear">
+          <option disabled selected hidden>Select Vehicle Year</option>
+          <!-- options appended here by list5ModelYears(); -->
+        </select>
+        <br>
+        <!-- Select Vehicle Make -->
+        <label for="convVehicleMake">#convVehicleMake</label>
+        <select id="convVehicleMake" name="convVehicleMake">
+          <option disabled selected hidden>Select Vehicle Make</option>
+          <!-- options appended here by listVehicleMakes(); -->
+        </select>
+        <br>
+        <!-- Select Vehicle Model -->
+        <label for="convVehicleModel">#convVehicleModel</label>
+        <select id="convVehicleModel" name="convVehicleModel">
+          <option disabled selected hidden>Select Vehicle Model</option>
+          <!-- options appended here by listVehicleModels(); -->
+        </select>
+        <br>
+        <!-- Select Vehicle Trim Level -->
+        <label for="convVehicleOptions">#convVehicleOptions</label>
+        <select id="convVehicleOptions" name="convVehicleOptions">
+          <option disabled selected hidden>Select Vehicle Trim Option</option>
+          <!-- options appended here by convVehicleOptions(); -->
+        </select>
+      </section>
+      <section class="grid-100 black">
+        <h3>Select Alternative Vehicle for Comparison</h3>
+      </section>
+    </nav>
+  </section>
+  
+  <!-- main content/results -->
+  <main class="grid-100 grid-parent"> 
+    
+    <!--section: Best Option-->
+    <section class="fm-calc-results grid-100 grid-parent"> 
+      <!-- best vehicle option header -->
+      <h2>Best Vehicle Option</h2>
+      <!-- Vehicle Information box -->
+      <section class="vehicle-info grid-100">
+        <h3>Vehicle Information</h3>
+        <!-- List information like make model etc. --> 
+      </section>
+      
+      <!-- Column -->
+      <div class="col grid-50 grid-parent"> 
+        <!--Vehicle Operating Costs Estimate Box-->
+        <section class="grid-100">
+          <h3>Vehicle Operating Costs Estimate</h3>
+          
+          <!-- Year 1 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-1">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 1 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 1 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub">
+                    <th scope="row" colspan="2">Cost Based on:
+                      <select id="fuelBasis" name="fuelBasis">
+                        <option value="manuEco">Manufacturer Rating</option>
+                        <option value="rangeEco">Custom Range Analysis</option>
+                      </select>
+                    </th>
+                  <tr>
+                    <th scope="row">Depreciation: 20% first year</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: 6% / year</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+          
+          <!-- Year 2 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-2">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 2 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 2 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: 6% / year</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+          
+          <!-- Year 3 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-3">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 3 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 3 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: 6% / year</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+          
+          <!-- Year 4 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-4">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 4 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 4 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: 6% / year</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+          
+          <!-- Year 5 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-5">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 5 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 5 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: 6% / year</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+          
+          <!-- Year 6 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-6">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 6 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 6 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Depreciation: N/A after year 5</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: N/A after year 5</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+          
+          <!-- Year 7 Operating Costs Estimate -->
+          <div class="fm-vehicle-operate year-7">
+            <table>
+              <tbody>
+                <tr class="total">
+                  <th scope="row">Total Year 7 Operating Costs:</th>
+                  <td>$0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <details>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fuel Cost: </th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr class="sub"> 
+                    <!-- TODO: Add (i) fuel cost = (fuelEco / avgMileage) * fuelAvg -->
+                    <th scope="row">Year 7 Average Fuel / Unit:</th>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Depreciation: N/A after year 5</th>
+                    <td>$0.00</td>
+                  </tr>
+                <th scope="row">Insurance, Maintenance &amp; Registration</th>
+                  <td>$0.00</td>
+                </tr>
+                <!-- TODO R2: Let user enter own insurance, registration --> 
+                <!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>--> 
+                <!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
+                <tr> 
+                  <!-- TODO R2: User can select interest rate -->
+                  <th scope="row">Financing and Interest: N/A after year 5</th>
+                  <td>$0.00</td>
+                </tr>
+                  </tbody>
+                
+              </table>
+            </details>
+          </div>
+        </section>
+      </div>
+      
+      <!-- Column 									(50%)	-->
+      <div class="col grid-50 grid-parent"> 
+        <!-- Vehicle Purchase Box -->
+        <section class="vehicle-purchase grid-100 black">
+          <h3>Vehicle Purchase Costs</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th scope="row">MSRP:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Initial Tax &amp; Licensing</th>
+                <td>$0.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Dealer Fees</th>
+                <td>$0.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Tax Rebates</th>
+                <td>$0.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Incentives</th>
+                <td>$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <!-- Estimated Total Vehicle Costs Box -->
+        <section class="vehicle-total grid-100 black">
+          <h3>Estimated Total Vehicle Costs</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th scope="row">Vehicle Purchase Cost</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-1">
+                <th scope="row" >Year 1 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-2">
+                <th scope="row">Year 2 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-3">
+                <th scope="row">Year 3 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-4">
+                <th scope="row">Year 4 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-5">
+                <th scope="row">Year 5 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-6">
+                <th scope="row">Year 6 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+              <tr class="year-7">
+                <th scope="row">Year 7 Operating Cost:</th>
+                <td>$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      
+      <!-- Refueling Map 	(only show for afvs?)		(100%)	-->
+      <section class="fm-fuel-map grid-100 black">
+        <h3>Alternative Fuel Vehicle Refueling Stations</h3>
+        <!-- Embed code from https://www.afdc.energy.gov/stations/#/find/nearest?show_embed=true-->
+        <div id="afdc-stations">
+          <div id="afdc-stations-loading">Loading alternative fueling station locator...</div>
+        </div>
+        <script type="text/javascript">window.afdcStationsOptions = {"country":"US","localeCountry":"US","path":"/find/nearest","query":{}}</script> 
+        <script async defer src="https://widgets.nrel.gov/afdc/station-locator/assets/embed.js"></script>
+        <noscript>
+        Please enable JavaScript to view the alternative fueling station locator.
+        </noscript>
+      </section>
+      
+      <!-- Range Analysis (only show for afvs?)		(100%)	-->
+      <section class="range-analysis grid-100 black">
+        <h3>Customized Range Analysis</h3>
+      </section>
+    </section>
+    
+    <!--section : repeat above-->
+    <section></section>
+  </main>
+  <!-- Start Footer Include --> 
+  <!--#include virtual="includes/fleet-maven-footer.html"--> 
+  <!-- End Footer Include --> 
 </div>
-<!-- FleetMacen JavaScript -->
+<!-- FleetMacen JavaScript --> 
 <script src="js/fm-script-r1.js"></script>
 </body>
 </html>
