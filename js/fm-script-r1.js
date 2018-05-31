@@ -7,16 +7,24 @@ $(function() {
 
 
 	// DECLARE GLOBAL CONSTANTS
-	// escalation rates from: afdc.energy.gov/calc/cost_calculator_methodology.html#sources
-	const escGas = 0.018;
-	const escE85 = 0.016;
-	const escCng = 0.003;
-	const escLpg = 0.013;
-	const escDie = 0.018;
-	const escB20 = 0.018;
-	const escB10 = 0.018;
-	const escEle = -0.003; // electricty has negative escalation rate
+	
+	// Tires and Maintenance = $.0538 / mile according to AAA
+	const tiresMaint = 0.0538; 
+	
+	// EV Tires and Maintenance = $.0410 / mile according to UC-Davis
+	const evTiresMaint = 0.0410; 
+	
+	// Depreciation Rate 20% the first year, 15% each year after, graduated method
+	const depRate = [0.20,0.15,0.15,0.15,0.15];
+	
+	// Insurance, License and Registration estimate from AAA
+	const insRegis = 1616;
 
+	// Vehicle Down Payment according to AAA
+	const downPayment = 0.10;
+	
+	// Interest Rate according to AAA
+	const intRate = 0.06;
 
 
 	// DECLARE AVERAGE VARIABLES
@@ -89,8 +97,10 @@ $(function() {
 
 		`);
 		
+		// Button not submitting data to server at this time
 		event.preventDefault();
 		
+		// remove years beyond depInt	
 		hideYears();
 		
 	});
@@ -134,7 +144,6 @@ $(function() {
 			case "cabChassis":
 		  $("#aveMileage").val(mileageAvg.cabChassis);
 		  break;
-
 		}
 	  }
 	  mileageSetter(vehicleType);
@@ -169,58 +178,84 @@ $(function() {
 		console.log(fuelBasis);
 	});
 
-	// Fuel Type						( "#fuelType" )
+	function fuelProjector(aveFuel) {
+		// declare fuel escalation constants
+		// escalation rates from: afdc.energy.gov/calc/cost_calculator_methodology.html#sources
+		const escGas = 0.018;
+		const escE85 = 0.016;
+		const escCng = 0.003;
+		const escLpg = 0.013;
+		const escDie = 0.018;
+		const escB20 = 0.018;
+		const escB10 = 0.018;
+		const escEle = -0.003; // electricty has negative escalation rate
+
+		// FUEL / UNIT COMPOUNDER
+		function fuelCompounder(aveFuel, escRate) {
+			for (let year = 1; year <= depInt; year++) {
+				aveFuel = (aveFuel * escRate) + aveFuel;
+				console.log(`Predicted year ${year} ${fuelType}/unit average $${aveFuel.toFixed(2)} with escalation rate of ${escRate}`);
+				}
+
+			switch (fuelType) {
+			  case 'gas': // GET
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(gasAve.Y0, escGas);
+				break;
+
+			  case 'e85':
+				console.log("fuel type changed to " + fuelType);
+				// write a function to pull in fuelHist[] data and call it here, passing in fuelType
+				fuelCompounder(e85Ave["2017"], escE85);
+				break;
+
+			  case 'cng': // GET
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(cngAve, escCng);
+				break;
+
+			  case 'lpg':
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(lpgAve["2017"], escLpg);
+				break;
+
+			  case 'die':
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(dieAve["2017"], escDie);
+				break;
+
+			  case 'b20':
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(b20Ave["2017"], escB20);
+				break;
+
+			  case 'b10':
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(b10Ave["2017"], escB10);
+				break;
+
+			  case 'eleCom': // GET
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(eleComAve, escEle);
+				break;
+
+			  case 'eleRes': // GET
+				console.log("fuel type changed to " + fuelType);
+				fuelCompounder(eleResAve, escEle);
+				break;
+			}
+		}
+	}
+
+	
+	// Fuel Type
 	let fuelType;
 	$( "#fuelType" ).change(function() {
-    switch (fuelType) {
-      case 'gas': // GET
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(gasAve.Y0, escGas);
-        break;
-
-      case 'e85':
-        console.log("fuel type changed to " + fuelType);
-        // write a function to pull in fuelHist[] data and call it here, passing in fuelType
-        fuelCompounder(e85Ave["2017"], escE85);
-        break;
-
-      case 'cng': // GET
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(cngAve, escCng);
-        break;
-
-      case 'lpg':
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(lpgAve["2017"], escLpg);
-        break;
-
-      case 'die':
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(dieAve["2017"], escDie);
-        break;
-
-      case 'b20':
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(b20Ave["2017"], escB20);
-        break;
-
-      case 'b10':
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(b10Ave["2017"], escB10);
-        break;
-
-      case 'eleCom': // GET
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(eleComAve, escEle);
-        break;
-
-      case 'eleRes': // GET
-        console.log("fuel type changed to " + fuelType);
-        fuelCompounder(eleResAve, escEle);
-        break;
-
-    }
-  });
+		fuelType = $( "#fuelType" ).val();
+		fuelProjector(fuelType);
+	});
+	
+							
 
 	
 	// WHAT YEAR IS IT?
@@ -231,17 +266,6 @@ $(function() {
 	console.log(lastYear);
 
   // TODO: NOW THAT I KNOW WHAT YEAR IT IS, I WANT TO MAKE THE CALLS SPECIFIC TO THE YEAR.
-	
-
-
-  // FUEL / UNIT COMPOUNDER
-  function fuelCompounder(aveFuel, escRate) {
-    for (let year = 1; year <= depInt; year++) {
-      aveFuel = (aveFuel * escRate) + aveFuel;
-      console.log(`Predicted year ${year} ${fuelType}/unit average $${aveFuel.toFixed(2)} with escalation rate of ${escRate}`);
-    }
-  }
-
 
   // JSON GET REQUESTS
   // Currently called right away when page loads
@@ -325,11 +349,9 @@ $(function() {
 
 	// Vehicle Operating Costs Estimate TODos
 
-	// TODO: Where does Fuel Cost come from 
-	// TODO: Where does Depreciation come from
-	// TODO: Where does Maintenance Costs come from
-	// TODO: Where does Insurance Estimate come from
-	// TODO: Where does Tax and Registration come from
+	// TODO: Fuel Cost 		=	projected fuelAve's * (fuelEco / manufacturer Estimate)
+	// TODO: Depreciation 	= 	depRate
+	// TODO: Insturance, Maintanance, registration	=	insMaint from AAA
 	// TODO: Where does Financing and Interest come from
 	// TODO: Let user remove financing and interest
 	

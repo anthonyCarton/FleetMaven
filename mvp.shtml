@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Fleet Maven Enterprise Calculator</title>
-<!-- Minimum Viable Product we can demonstrate -->
+<!-- Minimum Viable Product -->
 
 <!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
 <!--#include virtual="includes/head-include.html" -->
@@ -116,22 +116,18 @@
 										</select>
 									</th>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: 20% first year</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: 6% / year</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -162,22 +158,18 @@
 								  <td>$0.00</td>
 								</tr>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: 6% / year</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -208,22 +200,18 @@
 								  <td>$0.00</td>
 								</tr>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: 6% / year</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -254,22 +242,18 @@
 								  <td>$0.00</td>
 								</tr>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: 6% / year</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -300,22 +284,18 @@
 								  <td>$0.00</td>
 								</tr>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: 15% years 2 &ndash; 5</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: 6% / year</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -346,22 +326,18 @@
 								  <td>$0.00</td>
 								</tr>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: N/A after year 5</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: N/A after year 5</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -392,22 +368,18 @@
 								  <td>$0.00</td>
 								</tr>
 								<tr>
-								  <th scope="row">Depreciation</th>
+								  <th scope="row">Depreciation: N/A after year 5</th>
 								  <td>$0.00</td>
 								</tr>
-								  <th scope="row">Maintenance Costs</th>
+								  <th scope="row">Insurance, Maintenance &amp; Registration</th>
 								  <td>$0.00</td>
 								</tr>
+							  	<!-- TODO R2: Let user enter own insurance, registration -->
+								<!--<tr><th scope="row">Insurance Estimate</th><td>$0.00</td></tr>-->
+								<!--<tr><th scope="row">Yearly Registration</th><td>$0.00</td></tr>-->
 								<tr>
-								  <th scope="row">Insurance Estimate</th><!-- TODO: Let user enter own insurance est -->
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Tax &amp; Registration</th>
-								  <td>$0.00</td>
-								</tr>
-								<tr>
-								  <th scope="row">Financing and Interest</th>
+								  <!-- TODO R2: User can select interest rate -->
+								  <th scope="row">Financing and Interest: N/A after year 5</th>
 								  <td>$0.00</td>
 								</tr>
 							  </tbody>
@@ -431,7 +403,7 @@
 						  <td>$0.00</td>
 						</tr>
 						<tr>
-						  <th scope="row">Tax &amp; Licensing</th>
+						  <th scope="row">Initial Tax &amp; Licensing</th>
 						  <td>$0.00</td>
 						</tr>
 						<tr>
