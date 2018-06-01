@@ -74,28 +74,28 @@
         <!-- Select Model Year, just last 5 years -->
         <label for="convVehicleYear">#convVehicleYear</label>
         <select id="convVehicleYear" name="convVehicleYear">
-          <option disabled selected hidden>Select Vehicle Year</option>
+          <option disabled selected>Select Vehicle Year</option>
           <!-- options appended here by list5ModelYears(); -->
         </select>
         <br>
         <!-- Select Vehicle Make -->
         <label for="convVehicleMake">#convVehicleMake</label>
         <select id="convVehicleMake" name="convVehicleMake">
-          <option disabled selected hidden>Select Vehicle Make</option>
+          <option selected>Select Vehicle Make</option>
           <!-- options appended here by listVehicleMakes(); -->
         </select>
         <br>
         <!-- Select Vehicle Model -->
         <label for="convVehicleModel">#convVehicleModel</label>
         <select id="convVehicleModel" name="convVehicleModel">
-          <option disabled selected hidden>Select Vehicle Model</option>
+          <option selected>Select Vehicle Model</option>
           <!-- options appended here by listVehicleModels(); -->
         </select>
         <br>
         <!-- Select Vehicle Trim Level -->
         <label for="convVehicleOptions">#convVehicleOptions</label>
         <select id="convVehicleOptions" name="convVehicleOptions">
-          <option disabled selected hidden>Select Vehicle Trim Option</option>
+          <option selected>Select Vehicle Trim Option</option>
           <!-- options appended here by convVehicleOptions(); -->
         </select>
       </section>

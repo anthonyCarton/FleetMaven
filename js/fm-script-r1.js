@@ -38,21 +38,21 @@ $(function () {
 	// GETs Gas Average from data.colorado.gov/Energy/Gasoline-Prices-in-Colorado/8pk9-mh2i
 	let gasAve = {
 		"Y0": 1
-	}; 
-	
+	};
+
 	// GETs CNG Average from data.colorado.gov/Energy/Natural-Gas-Prices-in-Colorado/e4ky-6g2n
 	let cngAve = {
 		"Y0": 1
-	}; 
-	
+	};
+
 	// GETs Comercial and Residential Electricity Averages from data.colorado.gov/Business/Electricity-Revenue-in-Colorado/q6sk-tjm9
 	let eleComAve = {
 		"Y0": 1
 	};
 	let eleResAve = {
 		"Y0": 1
-	}; 
-	
+	};
+
 	// E85, LPG, Diesel, B20, B100 Averages from afdc.energy.gov/fuels/prices.html (no GET)
 	const e85Ave = {
 		"Y0": 2.68
@@ -76,6 +76,7 @@ $(function () {
 	// TODO: function setAveMileage(){ provide a different aveMileage based on vehicleType}
 
 	// Fleet mileageAvg's by vehicleType
+	// From 
 	const mileageAvg = {
 		car: 11244,
 		truck: 11712,
@@ -88,7 +89,7 @@ $(function () {
 
 
 	// DECLARE INTERFACE VARIABLES & EVENT LISTENERS
-
+	// Default Interface Values
 	let vehicleType = "car";
 	let depType = "yearDep";
 	let aveMileage = 11124; // TODO: Does this need to change b/c the above mileageAve?
@@ -197,10 +198,11 @@ $(function () {
 
 
 	// START VEHICLE SELECTION BLOCK 	***	***	***	***	***	***	***	***	//
-	// Declare Variables
+	// Declare Vehicle Variables
 	let convVehicleYear;
 	let convVehicleMake;
 	let convVehicleModel;
+	let selectedConvVehicle;
 
 
 	// POPULATE #convVehicleYear
@@ -208,7 +210,7 @@ $(function () {
 	function list5ModelYears(year) {
 		let thisModelYear = year + 1;
 		for (let i = 0; i < 5; i++) {
-			$("#convVehicleYear").append(`<option value=${thisModelYear}>${thisModelYear}</option>`);
+			$("#convVehicleYear").append(`<option value="${thisModelYear}">${thisModelYear}</option>`);
 			thisModelYear--;
 		}
 	}
@@ -239,9 +241,14 @@ $(function () {
 
 		// Add vehicleMakes (response) to the convVehicleMake select box.
 		function listVehicleMakes(document) {
+			// Clean out the "gen"erated makes, models, and options if user reselects
+			$(".genMakes").remove();
+			$(".genModels").remove();
+			$(".genOptions").remove();
 			$(document).find("menuItem").each(function () {
-				let optionValue = $(this).find("text").text();
-				$("#convVehicleMake").append(`<option value=${optionValue}>${optionValue}</option>`);
+				var optionLabel = $(this).find("text").text();
+				let optionValue = $(this).find("value").text();
+				$("#convVehicleMake").append(`<option class="genMakes" value="${optionValue}">${optionLabel}</option>`);
 			});
 		}
 	}
@@ -271,16 +278,20 @@ $(function () {
 
 		// Add makes (response) to the convVehicleMake select box.
 		function listVehicleModels(document) {
+			// Clean out the "gen"erated models, and options if user reselects
+			$(".genModels").remove();
+			$(".genOptions").remove();
 			$(document).find("menuItem").each(function () {
-				let optionValue = $(this).find("text").text();
-				$("#convVehicleModel").append(`<option value=${optionValue}>${optionValue}</option>`);
+				var optionLabel = $(this).find("text").text();
+				let optionValue = $(this).find("value").text();
+				$("#convVehicleModel").append(`<option class="genModels" value="${optionValue}">${optionLabel}</option>`);
 			});
 		}
 	}
 
 
 
-	// TODO: POPULATE #convVehicleOptions
+	// POPULATE #convVehicleOptions
 	// Get the selected model from #convVehicleModel. Call vehicleOptionsCall();
 	$("#convVehicleModel").change(function () {
 		convVehicleModel = $("#convVehicleModel").val();
@@ -303,14 +314,25 @@ $(function () {
 
 		// Add makes (response) to the convVehicleMake select box.
 		function listVehicleModels(document) {
+			// Clean out the "gen"erated options if user reselects
+			$(".genOptions").remove();
 			$(document).find("menuItem").each(function () {
 				var optionLabel = $(this).find("text").text();
 				let optionValue = $(this).find("value").text();
-				$("#convVehicleOptions").append(`<option value=${optionValue}>${optionLabel}</option>`);
+				$("#convVehicleOptions").append(`<option class="genOptions" value="${optionValue}">${optionLabel}</option>`);
+				console.log(`<option class="genOptions" value="${optionValue}">${optionLabel}</option>`);
+
 			});
 		}
 	}
 
+
+	// Get the selected 5 digit vehicle ID from #convVehicleOptions.
+	$("#convVehicleOptions").change(function () {
+		selectedConvVehicle = $("#convVehicleOptions").val();
+		console.log(selectedConvVehicle);
+		// GET Vehicle Description and Stats ()
+	});
 	// END VEHICLE SELECTION BLOCK 	***	***	***	***	***	***	***	***	//
 
 
