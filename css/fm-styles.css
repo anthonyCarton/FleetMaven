@@ -33,7 +33,7 @@
 .grid-container {
 }
 
-.hide-years, .not-mvp{
+.hide-years, .not-mvp, .hide-depBy {
 	display: none;
 }
 

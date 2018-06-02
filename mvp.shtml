@@ -22,6 +22,7 @@
     <form class="fm-form grid-50 black" id="mvp-user-entry">
       
       <!-- Vehicle Type Select Box-->
+      <!-- TODO: Add tooltips for these boxes -->
       <label for="vehicleType">Select Vehicle Type</label>
       <select id="vehicleType" name="vehicleType">
         <option value="car">Sedan / Wagon</option>
@@ -35,27 +36,36 @@
       <!-- Depreciation Type -->
       <label for="depType">Select Depreciation Type</label>
       <select id="depType" name="depType">
-        <option value="yearDep">Depreciation by Year</option>
-        <option value="mileageDep">Depreciation by Mileage</option>
+        <option value="depByYear">Depreciation by Year</option>
+        <option value="depByMile">Depreciation by Mileage</option>
       </select>
+      
+      <!-- Depreciation Interval Select Box--> 
+      <!-- TODO: Hide on $( "#depType" ).change() to mileageDep -->
+      <div id="selectDepInt" class="">
+		  <label for="depInt">Select Replacement Cycle</label>
+		  <select id="depInt" name="depInt">
+			<option value=1>1 year replacement cycle</option>
+			<option value=2>2 year replacement cycle</option>
+			<option value=3>3 year replacement cycle</option>
+			<option value=4>4 year replacement cycle</option>
+			<option value=5 selected>5 year replacement cycle</option>
+			<option value=6>6 year replacement cycle</option>
+			<option value=7>7 year replacement cycle</option>
+		  </select>
+	  </div>
+      
+      <!-- Depreciation Total Mileage -->
+      <!-- TODO: Hide on $( "#depType" ).change() to yearDep -->
+      <div id="selectDepMileage" class="hide-depBy">
+		  <label for="depMileage">Enter Total Depreciated Mileage</label>
+		  <input id="depMileage" name="depMileage" type="number" value="50000" required>
+	  </div>
       
       <!-- Average Yearly Mileage Entry--> 
       <!-- TODO: Show this only if user selects Depreciation by Mileage in depType -->
       <label for="aveMileage">Enter Average Yearly Mileage</label>
       <input id="aveMileage" name="aveMileage" type="number" value="11244" required>
-      
-      <!-- Depreciation Interval Select Box--> 
-      <!-- TODO: Show this only if user selects Depreciation by year in depType -->
-      <label for="depInt">Select Replacement Cycle</label>
-      <select id="depInt" name="depInt">
-        <option value=1>1 year replacement cycle</option>
-        <option value=2>2 year replacement cycle</option>
-        <option value=3>3 year replacement cycle</option>
-        <option value=4>4 year replacement cycle</option>
-        <option value=5 selected>5 year replacement cycle</option>
-        <option value=6>6 year replacement cycle</option>
-        <option value=7>7 year replacement cycle</option>
-      </select>
       
       <!-- Zip Code -->
       <label name="zipCode">Enter Zip Code</label>
@@ -68,39 +78,41 @@
     
     <!--return comparison summary (nav)-->
     <nav class="grid-50 black" id="mvp-vehicle-select">
-      <section class="grid-100 black">
         <h3>Select Conventional Vehicle Option</h3>
+        <form class="fm-form">
         
-        <!-- Select Model Year, just last 5 years -->
+        <!-- Select Model Year, just last 3 years -->
         <label for="convVehicleYear">#convVehicleYear</label>
         <select id="convVehicleYear" name="convVehicleYear">
           <option disabled selected>Select Vehicle Year</option>
           <!-- options appended here by list5ModelYears(); -->
         </select>
-        <br>
-        <!-- Select Vehicle Make -->
+
+		<!-- Select Vehicle Make -->
         <label for="convVehicleMake">#convVehicleMake</label>
         <select id="convVehicleMake" name="convVehicleMake">
           <option selected>Select Vehicle Make</option>
           <!-- options appended here by listVehicleMakes(); -->
         </select>
-        <br>
-        <!-- Select Vehicle Model -->
+
+		<!-- Select Vehicle Model -->
         <label for="convVehicleModel">#convVehicleModel</label>
         <select id="convVehicleModel" name="convVehicleModel">
           <option selected>Select Vehicle Model</option>
           <!-- options appended here by listVehicleModels(); -->
         </select>
-        <br>
-        <!-- Select Vehicle Trim Level -->
-        <label for="convVehicleOptions">#convVehicleOptions</label>
-        <select id="convVehicleOptions" name="convVehicleOptions">
+
+                <!-- Select Vehicle Trim Level -->
+        <label for="convVehicleTrim">#convVehicleTrim</label>
+        <select id="convVehicleTrim" name="convVehicleTrim">
           <option selected>Select Vehicle Trim Option</option>
           <!-- options appended here by convVehicleOptions(); -->
         </select>
-      </section>
+        <h1>$<span id="convVehiclePrice">0.00</span></h1>
+		  </form>
+
       <section class="grid-100 black">
-        <h3>Select Alternative Vehicle for Comparison</h3>
+        <h3>Select Alternative Fuel Vehicle for Comparison</h3>
       </section>
     </nav>
   </section>
