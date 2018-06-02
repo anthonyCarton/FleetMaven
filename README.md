@@ -1,7 +1,40 @@
-## 
-![gocode-logo](https://cloud.githubusercontent.com/assets/100216/12792545/96727a8e-ca69-11e5-9b9a-cddfa80d1c4b.png)
+## FleetMaven.com
+--
+FleetMaven is a company that drives Colorado fleet managers toward improved air quality through better business decisions. Businesses can spend upwards of 200 hours analyzing information for fleet vehicle purchases, Fleet Maven saves them time and money by helping them generate cost-benefit analysis that include alternative fuel vehicles. This cost/benefit analysis includes information like fuel projections based on average fuel prices in Colorado, average prices of recently sold vehicles (rather than MSRPs), and localized range analysis based on the terrain of the area (rather than a national average).
+
+###Getting Started
+--
+####Frameworks and libraries:
+
+
+####Databases:
+
+
+####Includes:
+
+
+###Usage:
 --
 
 
-[![gocodeboard](https://cloud.githubusercontent.com/assets/100216/12793457/f1c9b830-ca6d-11e5-8016-02d0d37c9cfb.png)](https://waffle.io/GoCodeColorado/FLCDesign)
-Click on the image above to go to your repository's Waffle board. Your Waffle board is prepopulated with tasks to help guide your team throughout the Go Code Colorado competition.
+###Known Bugs
+--
+
+
+###TODOs
+--
+
+####Release 2
+
+
+####Release 3
+
+
+####Future
+
+
+###License
+--
+
+
+
