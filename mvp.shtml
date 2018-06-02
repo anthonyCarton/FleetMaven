@@ -20,7 +20,8 @@
 
 		<!--return comparison summary (nav)-->
 		<nav id="mvp-vehicle-select">
-			<form class="fm-form grid-33" id="conv-user-select">
+			<form class="fm-form grid-100 grid-parent" id="mvp-user-entry">
+		  	<div class="grid-33">
 			  <h3>Select Conventional Vehicle</h3>
 
 			  <!-- Select Model Year, just last 5 years -->
@@ -64,10 +65,10 @@
 				<option selected>Select Vehicle Options</option>
 				<!-- options appended here by getVehicleTrims(); -->
 			  </select>
-			</form>
+			</div>
 
 			<!-- Start Alternative Fuel Vehicle Form -->
-			<form class="fm-form grid-33" id="alt-user-select">
+			<div class="grid-33">
 				<h3>Select Alternative Fuel Vehicle</h3>
 
 				<!-- Select Model Year, just last 5 years -->
@@ -112,10 +113,10 @@
 				  <option selected>Select Vehicle Options</option>
 				  <!-- options appended here by getVehicleTrims(); -->
 				</select>
-			</form>
+			</div>
 
 			<!--collect user information-->
-			<form class="fm-form grid-33" id="mvp-user-entry">
+			<div class="grid-33">
 			  <h3>Enter Vehicle Service Information</h3>
 
 			  <!-- Vehicle Type Select Box--> 
@@ -184,11 +185,11 @@
 		<section class="fm-calc-results grid-45 grid-parent">
 		<!-- best vehicle option header -->
 		<h2>Conventional Vehicle Option</h2>
-		<!-- Vehicle Information box -->
+		<!-- TODO R2: Vehicle Information box
 		<section class="vehicle-info grid-100">
 		  <h3>Vehicle Information</h3>
-		  <!-- List information like make model etc. --> 
-		</section>
+		  <!-- List information like make model etc.
+		</section>-->
 
 		<!-- Column -->
 		<div class="col grid-100 grid-parent"> 
@@ -586,11 +587,11 @@
 	<section class="fm-calc-results push-10 grid-45 grid-parent"> 
 	  <!-- best vehicle option header -->
 	  <h2>Alternative Vehicle Option</h2>
-	  <!-- Vehicle Information box -->
+	  <!-- TODO R2: Vehicle Information box
 	  <section class="vehicle-info grid-100">
 		<h3>Vehicle Information</h3>
-		<!-- List information like make model etc. --> 
-	  </section>
+		<!-- List information like make model etc.
+	  </section>-->
 
 	  <!-- Column -->
 	  <div class="col grid-100 grid-parent"> 

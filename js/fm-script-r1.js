@@ -118,8 +118,12 @@ $(function () {
 		}
 	});
 
-	// Collect user input
+	// >>>> <<<< >>>> <<<< >>>> <<<< >>>>
+	// COLLECT USER DATA AND CALCULATE
 	$("#mvp-user-entry").submit(function (event) {
+		// Button not submitting data to server at this time
+		event.preventDefault();
+		
 		// Vehicle Type
 		vehicleType = $("#vehicleType").val();
 
@@ -149,12 +153,11 @@ $(function () {
 
 		`);
 
-		// Button not submitting data to server at this time
-		event.preventDefault();
-
 		// remove years beyond depInt	
 		hideYears();
-
+		
+		// WRITE THE FUEL COSTS
+		fuelProjector(gasAve);
 	});
 
 	// Change Average Yearly Mileage based on Vehicle Type
@@ -212,14 +215,26 @@ $(function () {
 	let convVehiclePrice;
 	let convVehicleSub;
 	let convVehicleOpt;
+	let convVehicleID;
+	let convVehicleObj;
 
+	let altVehicleYear;
+	let altVehicleMake;
+	let altVehicleModel;
+	let altVehicleTrim;
+	let altVehiclePrice;
+	let altVehicleSub;
+	let altVehicleOpt;
+	let altVehicleID;
+	let altVehicleObj;
 
 
 	// POPULATE #convVehicleYear on $( document ).ready with last 3 Model Years
 	function popModelYears(year) {
 		let thisModelYear = year + 1;
 		for (let i = 0; i < 3; i++) {
-			$("#convVehicleYear").append(`<option value="${thisModelYear}">${thisModelYear}</option>`);
+			$( "#convVehicleYear").append(`<option value="${thisModelYear}">${thisModelYear}</option>`);
+			$( "#altVehicleYear").append(`<option value="${thisModelYear}">${thisModelYear}</option>`);
 			thisModelYear--;
 		}
 	}
@@ -227,20 +242,32 @@ $(function () {
 
 
 
-	// POPULATE #convVehicleMake on $("#convVehicleYear").change
+	// POPULATE #xxxVehicleMake on $("#xxxVehicleYear").change
 	$("#convVehicleYear").change(function () {
 		convVehicleYear = $("#convVehicleYear").val();
 		// Clean out the "gen"erated makes, models, and options if user reselects
-		$(".genMakes").remove();
-		$(".genModels").remove();
-		$(".genTrims").remove();
-		$(".genSubs").remove();
-		$(".genOpts").remove();
-		getVehicleMakes(convVehicleYear);
+		$(".convMakes").remove();
+		$(".convModels").remove();
+		$(".convTrims").remove();
+		$(".convSubs").remove();
+		$(".convOpts").remove();
+		getVehicleMakes("conv", convVehicleYear);
+	});
+
+	// POPULATE #altVehicleMake on $("#convVehicleYear").change
+	$("#altVehicleYear").change(function () {
+		altVehicleYear = $("#altVehicleYear").val();
+		// Clean out the "gen"erated makes, models, and options if user reselects
+		$(".altMakes").remove();
+		$(".altModels").remove();
+		$(".altTrims").remove();
+		$(".altSubs").remove();
+		$(".altOpts").remove();
+		getVehicleMakes("alt", altVehicleYear);
 	});
 
 	// GET Auto Makes from FuelEco.gov
-	function getVehicleMakes(vehicleYear) {
+	function getVehicleMakes(vehicleType, vehicleYear) {
 		let settings = {
 			"async": true,
 			"crossDomain": true,
@@ -250,15 +277,17 @@ $(function () {
 		};
 
 		$.ajax(settings).done(function (response) {
-			listVehicleMakes(response);
+			listVehicleMakes(vehicleType, response);
 		});
 
 		// Add vehicleMakes (response) to the convVehicleMake select box.
-		function listVehicleMakes(jsonObject) {
+		function listVehicleMakes(vehicleType, jsonObject) {
 			$(jsonObject).find("menuItem").each(function () {
 				let optionLabel = $(this).find("text").text();
 				let optionValue = $(this).find("value").text();
-				$("#convVehicleMake").append(`<option class="genMakes" value="${optionValue}">${optionLabel}</option>`);
+				let idConstructor = "#" + vehicleType + "VehicleMake";
+				console.log(idConstructor);
+				$(idConstructor).append(`<option class="${vehicleType}Makes" value="${optionValue}">${optionLabel}</option>`);
 			});
 		}
 	}
@@ -269,15 +298,26 @@ $(function () {
 	$("#convVehicleMake").change(function () {
 		convVehicleMake = $("#convVehicleMake").val();
 		// Clean out the "gen"erated models, and options if user reselects
-		$(".genModels").remove();
-		$(".genTrims").remove();
-		$(".genSubs").remove();
-		$(".genOpts").remove();
-		getVehicleModels(convVehicleYear, convVehicleMake);
-		getVehicleSubs(convVehicleYear, convVehicleMake);
+		$(".convModels").remove();
+		$(".convTrims").remove();
+		$(".convSubs").remove();
+		$(".convOpts").remove();
+		getVehicleModels("conv", convVehicleYear, convVehicleMake);
+		getVehicleSubs("conv", convVehicleYear, convVehicleMake);
 	});
 
-	function getVehicleModels(vehicleYear, vehicleMake) {
+	$("#altVehicleMake").change(function () {
+		altVehicleMake = $("#altVehicleMake").val();
+		// Clean out the "gen"erated models, and options if user reselects
+		$(".altModels").remove();
+		$(".altTrims").remove();
+		$(".altSubs").remove();
+		$(".altOpts").remove();
+		getVehicleModels("alt", altVehicleYear, altVehicleMake);
+		getVehicleSubs("alt", altVehicleYear, altVehicleMake);
+	});
+
+	function getVehicleModels(vehicleType, vehicleYear, vehicleMake) {
 		let modelsList;
 		let settings = {
 			"async": true,
@@ -289,51 +329,58 @@ $(function () {
 
 		$.ajax(settings).done(function (response) {
 			modelsList = response.facets.model;
-			listVehicleModels();
+			listVehicleModels(vehicleType);
 		});
 
 		// Add models (response) to the convVehicleMake select box.
-		function listVehicleModels() {
+		function listVehicleModels(vehicleType, jsonObject) {
 			modelsList.forEach(function (jsonObject) {
-				let {
-					item: optionLabel
-				} = jsonObject;
-				$("#convVehicleModel").append(`<option class="genModels" value="${optionLabel}">${optionLabel}</option>`);
+				let {item: optionLabel} = jsonObject;
+				let idConstructor = "#" + vehicleType + "VehicleModel";
+				console.log(idConstructor);
+				$(idConstructor).append(`<option class="${vehicleType}Models" value="${optionLabel}">${optionLabel}</option>`);
 			});
 		}
 	}
 
 
-	// POPULATE #convVehicleOptions on $("#convVehicleModel").change
+	// POPULATE #xxxVehicleOptions on $("#xxxVehicleModel").change
 	$("#convVehicleModel").change(function () {
 		convVehicleModel = $("#convVehicleModel").val();
 		// Clean out the "gen"erated options if user reselects
-		$(".genTrims").remove();
-		getVehicleTrims(convVehicleYear, convVehicleMake, convVehicleModel);
+		$(".convTrims").remove();
+		getVehicleTrims("conv", convVehicleYear, convVehicleMake, convVehicleModel);
+	});
+
+	$("#altVehicleModel").change(function () {
+		altVehicleModel = $("#altVehicleModel").val();
+		// Clean out the "gen"erated options if user reselects
+		$(".altTrims").remove();
+		getVehicleTrims("alt", altVehicleYear, altVehicleMake, altVehicleModel);
 	});
 
 	// GET MarketCheck Trims to populate #convVehicleTrim
-	function getVehicleTrims(vehicleYear, vehicleMake, vehicleModel) {
+	function getVehicleTrims(vehicleType, vehicleYear, vehicleMake, vehicleModel) {
 		let settings = {
 			"async": true,
 			"crossDomain": true,
 			"url": `https://marketcheck-prod.apigee.net/v1/search?api_key=bOUACYFEKJl0q7ILy4ptegjyM4a9vDU5&start=0&rows=0&year=${vehicleYear}&make=${vehicleMake}&model=${vehicleModel}&facets=trim`,
 			"method": "GET",
 			"headers": {}
-		}
+		};
 
 		$.ajax(settings).done(function (response) {
-			listVehicleTrims(response);
+			listVehicleTrims(vehicleType, response);
 		});
 
 		// Add makes (response) to the convVehicleMake select box.
-		function listVehicleTrims(response) {
-			let trimList = response.facets.trim;
+		function listVehicleTrims(vehicleType, jsonObject) {
+			let trimList = jsonObject.facets.trim;
 			trimList.forEach(function (element) {
-				let {
-					item: optionLabel
-				} = element;
-				$("#convVehicleTrim").append(`<option class="genTrims" value="${optionLabel}">${optionLabel}</option>`);
+				let {item: optionLabel} = element;
+				let idConstructor = "#" + vehicleType + "VehicleTrim";
+				console.log(idConstructor);
+				$(idConstructor).append(`<option class="${vehicleType}Trims" value="${optionLabel}">${optionLabel}</option>`);
 			});
 		}
 	}
@@ -342,10 +389,15 @@ $(function () {
 	// GET MarketCheck Price for Purchase Average Price cell.
 	$("#convVehicleTrim").change(function () {
 		convVehicleTrim = $("#convVehicleTrim").val();
-		getVehiclePrice(convVehicleYear, convVehicleMake, convVehicleModel, convVehicleTrim);
+		getVehiclePrice("conv", convVehicleYear, convVehicleMake, convVehicleModel, convVehicleTrim);
 	});
 
-	function getVehiclePrice(vehicleYear, vehicleMake, vehicleModel, vehicleTrim) {
+	$("#altVehicleTrim").change(function () {
+		altVehicleTrim = $("#altVehicleTrim").val();
+		getVehiclePrice("alt", altVehicleYear, altVehicleMake, altVehicleModel, altVehicleTrim);
+	});
+
+	function getVehiclePrice(vehicleType, vehicleYear, vehicleMake, vehicleModel, vehicleTrim) {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
@@ -355,22 +407,38 @@ $(function () {
 		};
 
 		$.ajax(settings).done(function (response) {
-			listVehiclePrice(response);
+			listVehiclePrice(vehicleType, response);
 		});
 
-		function listVehiclePrice(jsonObject) {
-			convVehiclePrice = jsonObject.stats.price.median;
-			$("#convVehiclePrice").text(convVehiclePrice);
+		function listVehiclePrice(vehicleType, jsonObject) {
+			switch (vehicleType) {
+				case "conv":
+					convVehiclePrice = jsonObject.stats.price.median;
+					$("#convVehiclePrice").text(convVehiclePrice);
+					console.log(convVehiclePrice);
+					break;
+
+				case "alt":
+					altVehiclePrice = jsonObject.stats.price.median;
+					$("#altVehiclePrice").text(altVehiclePrice);
+					break;
+			}
+			logPrices();
+		}
+		
+		function logPrices(){
+			console.log(`convVehiclePrice is ${convVehiclePrice}`);
+			console.log(`altVehiclePrice is ${altVehiclePrice}`);
 		}
 
 	}
 
 
 
-	// GET FuelEconomy.gov SubModels to populate #convVehicleSub.
+	// GET FuelEconomy.gov SubModels to populate #xxxVehicleSub.
 
-	// Function called when $("#convVehicleMake").change
-	function getVehicleSubs(vehicleYear, vehicleMake) {
+	// Function called when $("#xxxVehicleMake").change
+	function getVehicleSubs(vehicleType, vehicleYear, vehicleMake) {
 		let settings = {
 			"async": true,
 			"crossDomain": true,
@@ -380,30 +448,39 @@ $(function () {
 		};
 
 		$.ajax(settings).done(function (response) {
-			listVehicleSubs(response);
+			listVehicleSubs(vehicleType, response);
 		});
 
 		// Add vehicle sub models (response) to the convVehicleMake select box.
-		function listVehicleSubs(jsonObject) {
+		function listVehicleSubs(vehicleType, jsonObject) {
 			//$(".genOpts").remove();
 			$(jsonObject).find("menuItem").each(function () {
 				let optionLabel = $(this).find("text").text();
 				let optionValue = $(this).find("value").text();
-				$("#convVehicleSub").append(`<option class="genSubs" value="${optionValue}">${optionLabel}</option>`);
+				let idConstructor = "#" + vehicleType + "VehicleSub";
+				console.log(idConstructor);
+				$(idConstructor).append(`<option class="${vehicleType}Subs" value="${optionValue}">${optionLabel}</option>`);
 			});
 		}
 	}
 
 
-	// GET FuelEconomy.gov vehicleOpts to populate #convVehicleSub.
+	// GET FuelEconomy.gov vehicleOpts to populate #xxxVehicleOpts.
 	$("#convVehicleSub").change(function () {
 		convVehicleSub = $("#convVehicleSub").val();
 		// Clean out the "gen"erated makes, models, and options if user reselects
-		$(".genOpts").remove();
-		getVehicleOpts(convVehicleYear, convVehicleMake, convVehicleSub);
+		$(".convOpts").remove();
+		getVehicleOpts("conv", convVehicleYear, convVehicleMake, convVehicleSub);
 	});
 
-	function getVehicleOpts(vehicleYear, vehicleMake, vehicleSub) {
+	$("#altVehicleSub").change(function () {
+		altVehicleSub = $("#altVehicleSub").val();
+		// Clean out the "gen"erated makes, models, and options if user reselects
+		$(".altOpts").remove();
+		getVehicleOpts("alt", altVehicleYear, altVehicleMake, altVehicleSub);
+	});
+
+	function getVehicleOpts(vehicleType, vehicleYear, vehicleMake, vehicleSub) {
 		let settings = {
 			"async": true,
 			"crossDomain": true,
@@ -413,54 +490,93 @@ $(function () {
 		};
 
 		$.ajax(settings).done(function (response) {
-			listVehicleOpts(response);
+			listVehicleOpts(vehicleType, response);
 		});
 
 		// Add vehicle sub models (response) to the convVehicleMake select box.
-		function listVehicleOpts(jsonObject) {
+		function listVehicleOpts(vehicleType, jsonObject) {
 			$(jsonObject).find("menuItem").each(function () {
 				let optionLabel = $(this).find("text").text();
 				let optionValue = $(this).find("value").text();
-				$("#convVehicleOpt").append(`<option class="genOpts" value="${optionValue}">${optionLabel}</option>`);
+				let idConstructor = "#" + vehicleType + "VehicleOpt";
+				console.log(idConstructor);
+				$(idConstructor).append(`<option class="${vehicleType}Opts" value="${optionValue}">${optionLabel}</option>`);
 			});
 		}
 	}
 
-	// GET FuelEconomy.gov Fuel Economy Figures to populate #convVehicleSub.
+	// GET FuelEconomy.gov Fuel Economy Figures to populate xxxVehicleObj.
 	$("#convVehicleOpt").change(function () {
-		convVehicleOpt = $("#convVehicleOpt").val();
+		convVehicleID = parseInt($("#convVehicleOpt").val());
 		console.log('vehicleOpt has changed');
-		getVehicleInfo(convVehicleOpt);
+		getVehicleFigs("conv", convVehicleID);
 	});
 
-	function getVehicleInfo(vehicleId) {
-		console.log('getVehicleInfo has been called');
+	$("#altVehicleOpt").change(function () {
+		altVehicleID = parseInt($("#altVehicleOpt").val());
+		console.log('vehicleOpt has changed');
+		getVehicleFigs("alt", altVehicleID);
+	});
+
+	function getVehicleFigs(vehicleType, vehicleID) {
+		console.log(`getVehicleFigs has been called`);
+		console.log(vehicleID);
 
 		let settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": `https://www.fueleconomy.gov/ws/rest/ympg/shared/ympgVehicle/${vehicleId}`,
+			"url": `https://www.fueleconomy.gov/ws/rest/vehicle/${vehicleID}`,
 			"method": "GET",
 			"headers": {}
 		};
 
 		$.ajax(settings).done(function (response) {
-			console.log(response);
-			listVehicleInfo(response);
+			console.log(`ajax has run`);
+			listVehicleInfo(vehicleType, response);
 		});
 
 		// Add vehicle information (response) to the vehicleInfo object?.
-		function listVehicleInfo(jsonObject) {
-			$(jsonObject).find("yourMpgVehicle").each(function () {
-				let vehicleObj = {
-					avgMpg: $(this).find("avgMpg").text(),
-					cityPercent: $(this).find("cityPercent").text(),
-					highwayPercent: $(this).find("highwayPercent").text(),
-					maxMpg: $(this).find("maxMpg").text(),
-					minMpg: $(this).find("minMpg").text()
-				};
-				console.log(vehicleObj);
-			});
+		function listVehicleInfo(vehicleType, jsonObject) {
+			switch (vehicleType) {
+				case "conv":
+				console.log(`case conv entered`);
+				$(jsonObject).find("vehicle").each(function () {
+					convVehicleObj = {
+						cityMPG: $(this).find("city08").text(),
+						highMPG: $(this).find("highway08").text(),
+						combMPG: $(this).find("comb08").text(),
+						// TODO: Add cityPercent: $(this).find("cityPercent").text(),
+						// TODO: Add highwayPercent: $(this).find("highwayPercent").text(),
+						cityPHEV: $(this).find("phevCity").text(),
+						highPHEV: $(this).find("phevHwy").text(),
+						combPHEV: $(this).find("phevComb").text()
+					};
+					console.log(`inside convVehicleObj.combMPG is ${convVehicleObj.combMPG}`);
+					displayObj();
+				});
+				break;
+					
+				case "alt":
+				$(jsonObject).find("vehicle").each(function () {
+					altVehicleObj = {
+						cityMPG: $(this).find("city08").text(),
+						highMPG: $(this).find("highway08").text(),
+						combMPG: $(this).find("comb08").text(),
+						// TODO: Add cityPercent: $(this).find("cityPercent").text(),
+						// TODO: Add highwayPercent: $(this).find("highwayPercent").text(),
+						cityPHEV: $(this).find("phevCity").text(),
+						highPHEV: $(this).find("phevHwy").text(),
+						combPHEV: $(this).find("phevComb").text()
+					};
+					console.log(`inside altVehicleObj.combMPG is ${altVehicleObj.combMPG}`);
+					displayObj();
+				});
+				break;
+			}
+			function displayObj() {
+				console.log(`outside convVehicleObj.combMPG is ${convVehicleObj.combMPG}`);
+				console.log(`outside altVehicleObj.combMPG is ${altVehicleObj.combMPG}`);
+			}
 		}
 	}
 	// END VEHICLE SELECTION BLOCK 	***	***	***	***	***	***	***	***	//
