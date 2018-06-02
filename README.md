@@ -33,13 +33,20 @@ FleetMaven uses FuelEconomy.gov databases to populate automotive Makes, Models, 
 FleetMaven.com is currently using MarketCheck.com's vehicle database to reference prices. We are doing this because the database that includes both pricing and eco information (Edmunds) shut down their API this spring.
 
 ##### Data.Colorado.Gov (CO)
-FleetMaven.com uses databases from data.colorado.gov to reference fuelprices (Gasoline Averages, Compressed Natural Gas Averages, and Electricity Prices) to project fuel prices over the next up to 7 years for cost of ownership information.
-
+FleetMaven.com uses databases from data.colorado.gov to reference fuelprices (Gasoline Averages, Compressed Natural Gas Averages, and Electricity Prices) to project fuel prices over the next up to 7 years for cost of ownership information. 
 [Colorado Gas Prices](https://data.colorado.gov/Energy/Gasoline-Prices-in-Colorado/8pk9-mh2i)
 [Electricity Revenue in CO](https://data.colorado.gov/Business/Electricity-Revenue-in-Colorado/q6sk-tjm9)
 [Natural Gas Prices in CO](https://data.colorado.gov/Energy/Natural-Gas-Prices-in-Colorado/e4ky-6g2n)
+
+TODO: FleetMaven.com uses Charging Station Locations and Truck Station Electrification to locate charging stations for electric vehicles. 
 [Alternative Fuels and Electric Vehicle Charging Station Locations in Colorado](https://data.colorado.gov/Energy/Alternative-Fuels-and-Electric-Vehicle-Charging-St/team-3ugz)
 [Truck Station Electrification in Colorado 2014](https://data.colorado.gov/Energy/Truck-Station-Electrification-in-Colorado-2014/c8jj-hcxj)
+
+TODO: FleetMaven.com uses Highway Curves and Grades in Colorado to provide localized range analysis for users.
+[Highway Curves and Grades in Colorado](https://data.colorado.gov/Transportation/Highway-Curves-and-Grades-in-Colorado/gemu-wyf3)
+
+TODO: FleetMaven.com uses Alternative Energy Laws and Incentives in Colorado 2014 to identify applicable incentives to provide users accurate purchase pricing information.
+[Alternative Energy Laws and Incentives in Colorado 2014](https://data.colorado.gov/Energy/Alternative-Energy-Laws-and-Incentives-in-Colorado/nxw4-ev8w)
 
 In addition to these, we also used the database Professional and Occupational Licenses in Colorado to estimate our potential market in the state.
 [Professional and Occupational Licenses in Colorado](https://data.colorado.gov/Business/Professional-and-Occupational-Licenses-in-Colorado/7s5z-vewr)
@@ -49,23 +56,7 @@ We are also referencing Fuel Averages and Mileage Averages from the US Dept. of 
 
 
 ### Usage:
-
-
-### Known Bugs
-
-
-### TODOs
-
-#### Release 2
-
-
-#### Release 3
-
-
-#### Future
-
-
-### License
+FleetMaven.com's minimum viable product can be used to compare the prices of two vehicles, a conventionally fuelled vehicle and an alternative or advanced technology vehicle.
 
 
 
