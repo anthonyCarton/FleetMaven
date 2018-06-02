@@ -5,9 +5,7 @@
 <title>Fleet Maven Enterprise Calculator</title>
 <!-- Minimum Viable Product -->
 
-<!-- This is an 'include' it pulls in a file from the server with some things we want on every page -->
 <!--#include virtual="includes/head-include.html" -->
-
 </head>
 <body>
 	<div class="grid-container">
@@ -68,112 +66,112 @@
 			  </select>
 			</form>
 
-		<!-- Start Alternative Fuel Vehicle Form -->
-		<form class="fm-form grid-33" id="alt-user-select">
-		<h3>Select Alternative Fuel Vehicle</h3>
+			<!-- Start Alternative Fuel Vehicle Form -->
+			<form class="fm-form grid-33" id="alt-user-select">
+				<h3>Select Alternative Fuel Vehicle</h3>
 
-		<!-- Select Model Year, just last 5 years -->
-		<label for="altVehicleYear">Select Year</label>
-		<select id="altVehicleYear" name="altVehicleYear">
-		  <option disabled selected>Select Vehicle Year</option>
-		  <!-- options appended here by popModelYears(); -->
-		</select>
+				<!-- Select Model Year, just last 5 years -->
+				<label for="altVehicleYear">Select Year</label>
+				<select id="altVehicleYear" name="altVehicleYear">
+				  <option disabled selected>Select Vehicle Year</option>
+				  <!-- options appended here by popModelYears(); -->
+				</select>
 
-		<!-- Select Vehicle Make -->
-		<label for="altVehicleMake">Select Make</label>
-		<select id="altVehicleMake" name="altVehicleMake">
-		  <option selected>Select Vehicle Make</option>
-		  <!-- options appended here by getVehicleMakes(); -->
-		</select>
+				<!-- Select Vehicle Make -->
+				<label for="altVehicleMake">Select Make</label>
+				<select id="altVehicleMake" name="altVehicleMake">
+				  <option selected>Select Vehicle Make</option>
+				  <!-- options appended here by getVehicleMakes(); -->
+				</select>
 
-		<!-- Select Vehicle Model -->
-		<label for="altVehicleModel">Select Model</label>
-		<select id="altVehicleModel" name="altVehicleModel">
-		  <option selected>Select Vehicle Model</option>
-		  <!-- options appended here by getVehicleModels(); -->
-		</select>
+				<!-- Select Vehicle Model -->
+				<label for="altVehicleModel">Select Model</label>
+				<select id="altVehicleModel" name="altVehicleModel">
+				  <option selected>Select Vehicle Model</option>
+				  <!-- options appended here by getVehicleModels(); -->
+				</select>
 
-		<!-- Select Vehicle Trim Level -->
-		<label for="altVehicleTrim">Select Trim</label>
-		<select id="altVehicleTrim" name="altVehicleTrim">
-		  <option selected>Select Vehicle Trim</option>
-		  <!-- options appended here by getVehicleTrims(); -->
-		</select>
-		<!--<h1>$<span id="altVehiclePrice">0.00</span></h1>-->
+				<!-- Select Vehicle Trim Level -->
+				<label for="altVehicleTrim">Select Trim</label>
+				<select id="altVehicleTrim" name="altVehicleTrim">
+				  <option selected>Select Vehicle Trim</option>
+				  <!-- options appended here by getVehicleTrims(); -->
+				</select>
+				<!--<h1>$<span id="altVehiclePrice">0.00</span></h1>-->
 
-		<!-- Select Vehicle Sub Model -->
-		<label for="altVehicleSub">Select Sub-Model</label>
-		<select id="altVehicleSub" name="altVehicleSub">
-		  <option selected>Select Vehicle Sub Model</option>
-		  <!-- options appended here by getVehicleTrims(); -->
-		</select>
+				<!-- Select Vehicle Sub Model -->
+				<label for="altVehicleSub">Select Sub-Model</label>
+				<select id="altVehicleSub" name="altVehicleSub">
+				  <option selected>Select Vehicle Sub Model</option>
+				  <!-- options appended here by getVehicleTrims(); -->
+				</select>
 
-		<!-- Select Vehicle Sub Model -->
-		<label for="altVehicleOpt">Select Vehicle Options</label>
-		<select id="altVehicleOpt" name="altVehicleOpt">
-		  <option selected>Select Vehicle Options</option>
-		  <!-- options appended here by getVehicleTrims(); -->
-		</select>
-		</form>
+				<!-- Select Vehicle Sub Model -->
+				<label for="altVehicleOpt">Select Vehicle Options</label>
+				<select id="altVehicleOpt" name="altVehicleOpt">
+				  <option selected>Select Vehicle Options</option>
+				  <!-- options appended here by getVehicleTrims(); -->
+				</select>
+			</form>
 
-		<!--collect user information-->
-		<form class="fm-form grid-33" id="mvp-user-entry">
-		  <h3>Enter Vehicle Service Information</h3>
+			<!--collect user information-->
+			<form class="fm-form grid-33" id="mvp-user-entry">
+			  <h3>Enter Vehicle Service Information</h3>
 
-		  <!-- Vehicle Type Select Box--> 
-		  <!-- TODO: Add tooltips for these boxes -->
-		  <label for="vehicleType">Select Vehicle Type</label>
-		  <select id="vehicleType" name="vehicleType">
-			<option value="car">Sedan / Wagon</option>
-			<option value="truck">Truck</option>
-			<option value="suv">SUV</option>
-			<option value="van">Van</option>
-			<option value="stepVan">Step Van</option>
-			<option value="cabChassis">Cab &amp; Chassis</option>
-		  </select>
+			  <!-- Vehicle Type Select Box--> 
+			  <!-- TODO: Add tooltips for these boxes -->
+			  <label for="vehicleType">Select Vehicle Type</label>
+			  <select id="vehicleType" name="vehicleType">
+				<option value="car">Sedan / Wagon</option>
+				<option value="truck">Truck</option>
+				<option value="suv">SUV</option>
+				<option value="van">Van</option>
+				<option value="stepVan">Step Van</option>
+				<option value="cabChassis">Cab &amp; Chassis</option>
+			  </select>
 
-		  <!-- Depreciation Type -->
-		  <label for="depType">Select Depreciation Type</label>
-		  <select id="depType" name="depType">
-			<option value="depByYear">Depreciation by Year</option>
-			<option value="depByMile">Depreciation by Mileage</option>
-		  </select>
+			  <!-- Depreciation Type -->
+			  <label for="depType">Select Depreciation Type</label>
+			  <select id="depType" name="depType">
+				<option value="depByYear">Depreciation by Year</option>
+				<option value="depByMile">Depreciation by Mileage</option>
+			  </select>
 
-		  <!-- Depreciation Interval Select Box--> 
-		  <!-- TODO: Hide on $( "#depType" ).change() to mileageDep -->
-		  <div id="selectDepInt" class="">
-			<label for="depInt">Select Replacement Cycle</label>
-			<select id="depInt" name="depInt">
-			  <option value=1>1 year replacement cycle</option>
-			  <option value=2>2 year replacement cycle</option>
-			  <option value=3>3 year replacement cycle</option>
-			  <option value=4>4 year replacement cycle</option>
-			  <option value=5 selected>5 year replacement cycle</option>
-			  <option value=6>6 year replacement cycle</option>
-			  <option value=7>7 year replacement cycle</option>
-			</select>
-		  </div>
+			  <!-- Depreciation Interval Select Box--> 
+			  <!-- TODO: Hide on $( "#depType" ).change() to mileageDep -->
+			  <div id="selectDepInt" class="">
+				<label for="depInt">Select Replacement Cycle</label>
+				<select id="depInt" name="depInt">
+				  <option value=1>1 year replacement cycle</option>
+				  <option value=2>2 year replacement cycle</option>
+				  <option value=3>3 year replacement cycle</option>
+				  <option value=4>4 year replacement cycle</option>
+				  <option value=5 selected>5 year replacement cycle</option>
+				  <option value=6>6 year replacement cycle</option>
+				  <option value=7>7 year replacement cycle</option>
+				</select>
+			  </div>
 
-		  <!-- Depreciation Total Mileage --> 
-		  <!-- Hide on $( "#depType" ).change() to yearDep -->
-		  <div id="selectDepMileage" class="hide-depBy">
-			<label for="depMileage">Enter Total Depreciated Mileage</label>
-			<input id="depMileage" name="depMileage" type="number" value="50000" required>
-		  </div>
+			  <!-- Depreciation Total Mileage --> 
+			  <!-- Hide on $( "#depType" ).change() to yearDep -->
+			  <div id="selectDepMileage" class="hide-depBy">
+				<label for="depMileage">Enter Total Depreciated Mileage</label>
+				<input id="depMileage" name="depMileage" type="number" value="50000" required>
+			  </div>
 
-		  <!-- Average Yearly Mileage Entry--> 
-		  <!-- Show this only if user selects Depreciation by Mileage in depType -->
-		  <label for="aveMileage">Enter Average Yearly Mileage</label>
-		  <input id="aveMileage" name="aveMileage" type="number" value="11244" required>
+			  <!-- Average Yearly Mileage Entry--> 
+			  <!-- Show this only if user selects Depreciation by Mileage in depType -->
+			  <label for="aveMileage">Enter Average Yearly Mileage</label>
+			  <input id="aveMileage" name="aveMileage" type="number" value="11244" required>
 
-		  <!-- Zip Code -->
-		  <label name="zipCode">Enter Zip Code</label>
-		  <input id="zipCode" name="zipCode" type="text" placeholder="81328" pattern="[0-9]{5}" title="Five digit zip code" required/>
+			  <!-- Zip Code -->
+			  <label name="zipCode">Enter Zip Code</label>
+			  <input id="zipCode" name="zipCode" type="text" placeholder="81328" pattern="[0-9]{5}" title="Five digit zip code" required/>
 
-		  <!-- TODO R3: ADD FIRST, LAST NAME, BUSINESS NAME, EMAIL -->
+			  <!-- TODO R3: ADD FIRST, LAST NAME, BUSINESS NAME, EMAIL -->
 
-		  <button class="medium orange-button block" id="calcButton" type="submit">Calculate!</button>
-		</form>
+			  <button class="medium orange-button block" id="calcButton" type="submit">Calculate!</button>
+			</form>
 		
 		<!--</section>-->
 		</nav>
@@ -981,7 +979,8 @@
 		  </table>
 		</section>
 	  </div>
-	  </main>
+	  
+	</main>
 
 	<!-- Refueling Map 	(only show for afvs?) -->
 	<section class="fm-fuel-map grid-100">
