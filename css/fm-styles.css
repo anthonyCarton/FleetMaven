@@ -369,7 +369,16 @@ p {
 	.fm-form select, .fm-form input {
 		width:50%;
 		height:25px;
-}
+	}
+
+	.fm-form h3 {
+		font-family: "museo-slab",serif;
+		font-weight: 500;
+		color: #7A7A7A;
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		min-height:60px;
+	}
 
 	
 
